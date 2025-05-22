@@ -59,9 +59,7 @@
             <nav id="navmenu" class="navmenu">
                 <ul>
                     <li><a href="#home" class="active">Home</a></li>
-                    <li><a href="#about">Tentang Kami</a></li>
-                    <li><a href="#statistik">Data Statistik</a></li>
-                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="dashboard">Dashboard Data</a></li>
                     <li><a href="#login">Login</a></li>
                 </ul>
                 <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
