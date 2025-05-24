@@ -22,7 +22,6 @@
   --background-color: #ffffff; /* Background color for the entire website, including individual sections */
   --default-color: #444444; /* Default color used for the majority of the text content across the entire website */
   --heading-color: #040677; /* Color for headings, subheadings and title throughout the website */
-  //--heading-color: #ff914d; /* Color for headings, subheadings and title throughout the website */
   --accent-color: #1acc8d; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
   --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
   --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
@@ -30,8 +29,7 @@
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
 :root {
-  //--nav-color: #ffffff;  /* The default color of the main navmenu links */
-  --nav-color: #000000;  /* The default color of the main navmenu links */
+  --nav-color: #ffffff;  /* The default color of the main navmenu links */
   --nav-hover-color: #1acc8d; /* Applied to main navmenu links when they are hovered over or active */
   --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
   --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
@@ -47,10 +45,9 @@
 }
 
 .dark-background {
-  //--background-color: #08005e;
-  --background-color: #ff914d;
+  --background-color: #08005e;
   --default-color: #ffffff;
-  --heading-color: #000000; //heading color
+  --heading-color: #ffffff;
   --surface-color: #0c0091;
   --contrast-color: #ffffff;
 }
@@ -148,22 +145,26 @@ h6 {
 .header {
   --background-color: rgba(255, 255, 255, 0);
   --default-color: #ffffff;
-  --heading-color: #000000; //header atas kiri
+  --heading-color: #ffffff; //header atas kiri
   color: var(--default-color);
   background-color: var(--background-color);
   padding: 20px 0;
   transition: all 0.5s;
   z-index: 997;
 }
+.header .container-fluid {
+  padding-left: 32px;
+  padding-right: 32px;
+}
 
 .header .logo {
   line-height: 1;
 }
 
-.header .logo img {
-  max-height: 32px;
-  margin-right: 8px;
-}
+/* .header .logo img {
+  max-height: 65px;
+  margin-right: 15px;
+} */
 
 .header .logo h1 {
   font-size: 30px;
@@ -179,8 +180,8 @@ h6 {
 /* Global Header on Scroll
 ------------------------------*/
 .scrolled .header {
-  //--background-color: #10058c;
-  --background-color: #ff8a2e;
+  --background-color: #10058c; 
+  //--background-color: #ff8a2e; warna SE
 }
 
 /*--------------------------------------------------------------
@@ -1758,7 +1759,66 @@ section,
 --------------------------------------------------------------*/
 .starter-section {
 }
+/* Jangan beri batas tinggi & scroll ke setiap kategori */
 .indicator-list {
-    max-height: 300px;
-    overflow-y: auto;
+  max-height: none !important;
+  overflow: visible !important;
+  margin-bottom: 0 !important;
+}
+
+/* Hilangkan margin bawah antar daftar */
+.list-group.mb-2 {
+  margin-bottom: 0 !important;
+}
+
+/* Batasi tinggi total daftar dan tambahkan scroll jika overflow */
+#indikator-wrapper {
+  max-height: 300px; /* Atur tinggi sesuai kebutuhan */
+  overflow-y: auto;
+  padding-right: 5px;
+}
+
+/* Scrollbar custom */
+#indikator-wrapper::-webkit-scrollbar {
+  width: 6px;
+}
+
+#indikator-wrapper::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+}
+  .instruction-box {
+    background-color: #f5f5f5;
+    color: #333;
+    padding: 18px 22px 18px 48px; /* kasih space kiri buat icon */
+    border-left: 4px solid #4a90e2;
+    border-radius: 6px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    max-width: 100%; /* full width */
+    box-sizing: border-box;
+    position: relative;
+    margin-bottom: 20px;
   }
+
+  .instruction-box svg {
+    position: absolute;
+    left: 16px;
+    top: 18px;
+    width: 20px;
+    height: 20px;
+    fill: #4a90e2;
+  }
+
+  .instruction-box h2 {
+    margin: 0 0 8px 0;
+    font-weight: 600;
+    font-size: 1.3rem;
+  }
+
+  .instruction-box p {
+    margin: 0;
+    font-weight: 400;
+    font-size: 1rem;
+  }
+  /* wako */
+  

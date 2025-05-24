@@ -47,13 +47,29 @@
 
 <body class="index-page">
 
-    <header id="header" class="header d-flex align-items-center fixed-top">
-        <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
-
+    <header id="header" class="header d-flex align-items-center fixed-top" style="height: 100px;">
+        <div class="container-fluid d-flex align-items-center justify-content-between">
             <a href="index.html" class="logo d-flex align-items-center">
-                <!-- Uncomment the line below if you also wish to use an image logo -->
-                <!-- <img src="{{ asset('template/landingPage') }}/assets/img/logo.png" alt=""> -->
-                <h1 class="sitename">KBS</h1>
+                <!-- Logo deret: BPS, BERAKHLAK, Bangga Melayani Bangsa -->
+                <!-- Logo deret: BPS, BERAKHLAK, Bangga Melayani Bangsa, Linggau -->
+                <div class="d-flex align-items-center me-3">
+                    <img src="{{ asset('template/landingPage') }}/assets/img/bps.png" alt="Logo BPS"
+                        style="height: 75px; margin-right: 12px;">
+
+                    <!-- Disembunyikan di tampilan mobile -->
+                    <img src="{{ asset('template/landingPage') }}/assets/img/berakhlak.png" alt="Logo BERAKHLAK"
+                        class="d-none d-md-block" style="height: 75px; margin-right: 12px;">
+
+                    <!-- Disembunyikan di tampilan mobile -->
+                    <img src="{{ asset('template/landingPage') }}/assets/img/banggamelayanibangsa.png"
+                        alt="Logo Bangga Melayani Bangsa" class="d-none d-md-block"
+                        style="height: 150px; width: auto; margin-right: 12px;">
+
+                    <img src="{{ asset('template/landingPage') }}/assets/img/logolinggau.png" alt="Logo Linggau"
+                        style="height: 75px;">
+                </div>
+
+                <h1 class="sitename m-0" style="font-size: 2rem;">SEBIDUK LINGGAU</h1>
             </a>
 
             <nav id="navmenu" class="navmenu">
@@ -72,15 +88,23 @@
 
         <!-- Page Title -->
         <div class="page-title dark-background" data-aos="fade">
-            <div class="heading">
-                <div class="container">
-                    <div class="row d-flex justify-content-center text-center">
-                        <div class="col-lg-8">
-                            <h1>Dashboard Data Kelurahan</h1>
-                            <p class="mb-0">Pada halaman ini akan menampilkan data statistik kelurahan dengan isian
-                                table dan grafik yang menarik</p>
-                        </div>
+            <div class="heading-section " style="padding-top: 100px;">
+                <div class="heading-container d-flex align-items-center justify-content-between text-center flex-wrap">
+
+                    <!-- Gambar Wakot di kiri -->
+                    <img src="{{ asset('template/landingPage') }}/assets/img/walkot.png" alt="Walikota"
+                        class="wakot-img img-fluid d-none d-md-block" width="300" style="margin: 50px;">
+
+                    <!-- Teks di tengah -->
+                    <div class="heading-text text-center mx-3 flex-grow-1">
+                        <h1>Dashboard Data Kelurahan</h1>
+                        <p>Pada halaman ini akan menampilkan data statistik kelurahan dengan isian tabel dan grafik yang
+                            menarik.</p>
                     </div>
+
+                    <!-- Gambar Wawakot di kanan -->
+                    <img src="{{ asset('template/landingPage') }}/assets/img/wawakot.png" alt="Wakil Walikota"
+                        class="wawakot-img img-fluid d-none d-md-block" width="330" style="margin: 50px;">
                 </div>
             </div>
             {{-- <nav class="breadcrumbs">
@@ -150,45 +174,177 @@
                         </div>
 
 
-                        <h6>Indikator</h6>
-                        <input type="text" class="form-control mb-2" placeholder="Cari indikator">
-                        <div class="indicator-list">
-                            <div class="list-group">
-                                <button class="list-group-item list-group-item-action active"
-                                    data-target="jenis-kelamin">Jenis Kelamin</button>
-                                <button class="list-group-item list-group-item-action" data-target="usia">Usia</button>
-                                <button class="list-group-item list-group-item-action">Hubungan dengan Kepala
-                                    Keluarga</button>
-                                <button class="list-group-item list-group-item-action">Status Perkawinan</button>
-                                <button class="list-group-item list-group-item-action">Agama</button>
-                                <button class="list-group-item list-group-item-action">Suku Bangsa</button>
-                                <button class="list-group-item list-group-item-action">Kewarganegaraan</button>
-                                <button class="list-group-item list-group-item-action">Golongan Darah</button>
-                                <button class="list-group-item list-group-item-action">Kepemilikan Buku Nikah</button>
-                                <button class="list-group-item list-group-item-action">Status Kepemilikan
-                                    Rumah</button>
-                                <button class="list-group-item list-group-item-action">Jenis Pekerjaan</button>
-                                <button class="list-group-item list-group-item-action">Pendidikan Tertinggi</button>
-                                <button class="list-group-item list-group-item-action">Akses Kesehatan</button>
-                                <button class="list-group-item list-group-item-action">Kepemilikan Jaminan
-                                    Sosial</button>
-                                <button class="list-group-item list-group-item-action">Partisipasi Kegiatan
-                                    Sosial</button>
-                                <button class="list-group-item list-group-item-action">Akses Internet</button>
-                                <button class="list-group-item list-group-item-action">Fasilitas Air Bersih</button>
-                                <button class="list-group-item list-group-item-action">Jenis Atap Rumah</button>
-                                <button class="list-group-item list-group-item-action">Jenis Lantai Rumah</button>
-                                <button class="list-group-item list-group-item-action">Jenis Dinding Rumah</button>
+
+
+                        <div class="d-flex flex-wrap gap-2 mb-3" id="kategori-buttons">
+                            <button type="button" class="btn btn-outline-primary btn-sm active text-nowrap"
+                                data-kategori="semua">
+                                Semua Kategori
+                            </button>
+                            <button type="button" class="btn btn-outline-primary btn-sm text-nowrap"
+                                data-kategori="individu">
+                                Deskripsi Individu
+                            </button>
+                            <button type="button" class="btn btn-outline-primary btn-sm text-nowrap"
+                                data-kategori="ekonomi">
+                                Ekonomi
+                            </button>
+                            <button type="button" class="btn btn-outline-primary btn-sm text-nowrap"
+                                data-kategori="sosial">
+                                Sosial & Kesehatan
+                            </button>
+                            <button type="button" class="btn btn-outline-primary btn-sm text-nowrap"
+                                data-kategori="perumahan">
+                                Rumah Tangga & Perumahan
+                            </button>
+                            <button type="button" class="btn btn-outline-primary btn-sm text-nowrap"
+                                data-kategori="wilayah">
+                                Potensi Kewilayahan
+                            </button>
+                        </div>
+
+                        <!-- Input Pencarian (Opsional) -->
+                        <input type="text" class="form-control mb-2" placeholder="Cari indikator"
+                            id="searchInput">
+                        <div id="indikator-wrapper">
+
+
+                            <div class="indicator-list" data-kategori="individu">
+                                <div class="list-group mb-2">
+                                    <button class="list-group-item list-group-item-action btn-sm"
+                                        data-target="jenis-kelamin">Jenis Kelamin</button>
+                                    <button class="list-group-item list-group-item-action btn-sm"
+                                        data-target="usia">Usia</button>
+                                    <button class="list-group-item list-group-item-action btn-sm"
+                                        data-target="status-perkawinan">Status Perkawinan</button>
+                                    <button class="list-group-item list-group-item-action btn-sm"
+                                        data-target="agama">Agama</button>
+                                    <button class="list-group-item list-group-item-action btn-sm"
+                                        data-target="suku-bangsa">Suku Bangsa</button>
+                                    <button class="list-group-item list-group-item-action btn-sm"
+                                        data-target="kewarganegaraan">Kewarganegaraan</button>
+                                    <button class="list-group-item list-group-item-action btn-sm"
+                                        data-target="kartu-keluarga">Kepemilikan Kartu Keluarga</button>
+                                    <button class="list-group-item list-group-item-action btn-sm"
+                                        data-target="ktp">Kepemilikan KTP</button>
+                                    <button class="list-group-item list-group-item-action btn-sm"
+                                        data-target="buku-nikah">Kepemilikan Buku Nikah</button>
+                                    <button class="list-group-item list-group-item-action btn-sm"
+                                        data-target="buku-cerai">Kepemilikan Buku Cerai</button>
+
+
+                                </div>
                             </div>
+
+                            <div class="indicator-list" data-kategori="ekonomi">
+                                <div class="list-group mb-2">
+                                    <button class="list-group-item list-group-item-action btn-sm"
+                                        data-target="kegiatan-utama-penduduk">Kegiatan Utama Penduduk
+                                        (Kerja/Sekolah/Lainnya)</button>
+                                    <button class="list-group-item list-group-item-action btn-sm"
+                                        data-target="jenis-usaha-pekerjaan">Jenis Usaha/Pekerjaan</button>
+                                    <button class="list-group-item list-group-item-action btn-sm"
+                                        data-target="bantuan-sosial-individu">Bantuan Sosial Individu</button>
+                                    <button class="list-group-item list-group-item-action btn-sm"
+                                        data-target="usaha-umkm">Usaha: UMKM</button>
+                                    <button class="list-group-item list-group-item-action btn-sm"
+                                        data-target="jaminan-sosial-ketenagakerjaan">Jaminan Sosial
+                                        Ketenagakerjaan</button>
+                                    <button class="list-group-item list-group-item-action btn-sm"
+                                        data-target="kewajiban-pajak-lainnya">Kewajiban Pajak Lainnya</button>
+                                </div>
+                            </div>
+
+                            <div class="indicator-list" data-kategori="sosial">
+                                <div class="list-group mb-2">
+                                    <button class="list-group-item list-group-item-action btn-sm"
+                                        data-target="partisipasi-sekolah">Partisipasi Sekolah</button>
+                                    <button class="list-group-item list-group-item-action btn-sm"
+                                        data-target="pendidikan-tertinggi">Pendidikan Tertinggi (Ijazah)</button>
+                                    <button class="list-group-item list-group-item-action btn-sm"
+                                        data-target="disabilitas">Disabilitas</button>
+                                    <button class="list-group-item list-group-item-action btn-sm"
+                                        data-target="kejadian-kematian">Kejadian Kematian</button>
+                                    <button class="list-group-item list-group-item-action btn-sm"
+                                        data-target="jaminan-sosial-kesehatan">Jaminan Sosial Kesehatan</button>
+                                </div>
+                            </div>
+
+                            <div class="indicator-list" data-kategori="perumahan">
+                                <div class="list-group mb-2">
+                                    <button class="list-group-item list-group-item-action btn-sm"
+                                        data-target="jenis-dinding-rumah">Jenis Dinding Rumah</button>
+                                    <button class="list-group-item list-group-item-action btn-sm"
+                                        data-target="status-kepemilikan-tempat-tinggal">Status Kepemilikan Tempat
+                                        Tinggal</button>
+                                    <button class="list-group-item list-group-item-action btn-sm"
+                                        data-target="sumber-penerangan-rumah">Sumber Penerangan Rumah (PLN / Non
+                                        PLN)</button>
+                                </div>
+                            </div>
+
+                            <div class="indicator-list" data-kategori="wilayah">
+                                <div class="list-group mb-2">
+                                    <button class="list-group-item list-group-item-action btn-sm"
+                                        data-target="topografi-kelurahan">Topografi Kelurahan</button>
+                                    <button class="list-group-item list-group-item-action btn-sm"
+                                        data-target="kependudukan-ketenagakerjaan">Kependudukan dan
+                                        Ketenagakerjaan</button>
+                                    <button class="list-group-item list-group-item-action btn-sm"
+                                        data-target="perumahan-lingkungan-hidup">Perumahan dan Lingkungan
+                                        Hidup</button>
+                                    <button class="list-group-item list-group-item-action btn-sm"
+                                        data-target="bencana-mitigasi">Bencana Alam dan Mitigasi Bencana</button>
+                                    <button class="list-group-item list-group-item-action btn-sm"
+                                        data-target="pendidikan-kesehatan">Pendidikan dan Kesehatan</button>
+                                    <button class="list-group-item list-group-item-action btn-sm"
+                                        data-target="sosial-budaya">Sosial Budaya</button>
+                                    <button class="list-group-item list-group-item-action btn-sm"
+                                        data-target="angkutan">Angkutan</button>
+                                    <button class="list-group-item list-group-item-action btn-sm"
+                                        data-target="komunikasi">Komunikasi</button>
+                                    <button class="list-group-item list-group-item-action btn-sm"
+                                        data-target="informasi">Informasi</button>
+                                    <button class="list-group-item list-group-item-action btn-sm"
+                                        data-target="penggunaan-lahan">Penggunaan Lahan</button>
+                                    <button class="list-group-item list-group-item-action btn-sm"
+                                        data-target="ekonomi">Ekonomi</button>
+                                    <button class="list-group-item list-group-item-action btn-sm"
+                                        data-target="keamanan">Keamanan</button>
+                                    <button class="list-group-item list-group-item-action btn-sm"
+                                        data-target="keuangan-aset">Keuangan dan Aset</button>
+                                    <button class="list-group-item list-group-item-action btn-sm"
+                                        data-target="perlindungan-sosial">Perlindungan Sosial</button>
+                                    <button class="list-group-item list-group-item-action btn-sm"
+                                        data-target="pembangunan">Pembangunan</button>
+                                    <button class="list-group-item list-group-item-action btn-sm"
+                                        data-target="pemberdayaan-masyarakat">Pemberdayaan Masyarakat</button>
+                                    <button class="list-group-item list-group-item-action btn-sm"
+                                        data-target="aparatur-pemerintah">Aparatur Pemerintah</button>
+                                </div>
+                            </div>
+
                         </div>
 
                     </div>
 
                     <!-- Content -->
                     <div class="col-md-9">
+                        <!-- Konten Default (Kosong Awal) -->
+                        <div id="konten-default" class="indikator-konten">
+                            <div class="text-center py-5 instruction-box">
+                                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10
+             10-4.48 10-10S17.52 2 12 2zm.75 15h-1.5v-6h1.5v6zm0-8h-1.5V7h1.5v2z" />
+                                </svg>
+                                <h5>Silakan pilih indikator yang ingin ditampilkan</h5>
+                                <p class="text-muted">Klik salah satu indikator di samping untuk melihat grafik dan
+                                    tabel.</p>
+                            </div>
+                        </div>
 
                         <!-- Konten Jenis Kelamin -->
-                        <div id="konten-jenis-kelamin" class="indikator-konten">
+                        <div id="konten-jenis-kelamin" class="indikator-konten d-none">
                             <div class="chart-container">
                                 <h5>Grafik Jumlah Penduduk Menurut Kecamatan dan Jenis Kelamin di Kota Lubuk Linggau
                                 </h5>
@@ -480,18 +636,14 @@
     </script>
 
 
-    {{-- script perpindahan data --}}
     <script>
-        // Fungsi untuk aktifkan tombol dan konten berdasarkan target
         function activateIndicator(target) {
-            // Aktifkan tombol
             document.querySelectorAll('.indicator-list .list-group-item').forEach(btn => {
                 btn.classList.remove('active');
             });
             const activeButton = document.querySelector(`.indicator-list .list-group-item[data-target="${target}"]`);
             if (activeButton) activeButton.classList.add('active');
 
-            // Tampilkan konten sesuai indikator, sembunyikan sisanya
             document.querySelectorAll('.indikator-konten').forEach(content => {
                 content.classList.add('d-none');
             });
@@ -499,39 +651,44 @@
             if (selectedContent) selectedContent.classList.remove('d-none');
         }
 
-        document.querySelectorAll('.indicator-list .list-group-item').forEach(button => {
-            button.addEventListener('click', () => {
-                const target = button.getAttribute('data-target');
-
-                // Aktifkan sesuai klik
-                activateIndicator(target);
-
-                // Simpan ke localStorage supaya tersimpan walau refresh
-                localStorage.setItem('activeIndicator', target);
-            });
-        });
-
-        // Saat halaman dimuat, baca localStorage dan aktifkan sesuai
         document.addEventListener('DOMContentLoaded', () => {
-            const savedIndicator = localStorage.getItem('activeIndicator');
+            const savedIndicator = sessionStorage.getItem('activeIndicator');
 
-            if (savedIndicator) {
+            // Deteksi apakah ini reload halaman (refresh)
+            const navEntries = performance.getEntriesByType("navigation");
+            const isReload = navEntries.length > 0 && navEntries[0].type === 'reload';
+
+            if (isReload && savedIndicator) {
+                // Jika refresh dan ada data di sessionStorage, restore indikator terakhir
                 activateIndicator(savedIndicator);
             } else {
-                // Jika tidak ada data tersimpan, aktifkan default (misal yang pertama)
-                const firstButton = document.querySelector('.indicator-list .list-group-item');
-                if (firstButton) {
-                    activateIndicator(firstButton.getAttribute('data-target'));
-                }
+                // Jika bukan refresh (misal pindah halaman dan kembali), reset ke default
+                activateIndicator('default');
+                sessionStorage.removeItem('activeIndicator');
             }
+
+            document.querySelectorAll('.indicator-list .list-group-item').forEach(button => {
+                button.addEventListener('click', () => {
+                    const target = button.getAttribute('data-target');
+                    activateIndicator(target);
+                    sessionStorage.setItem('activeIndicator', target);
+                });
+            });
         });
     </script>
 
+
+
+
+
+
+
+
+    <!-- Script Cari Indikator -->
     <script>
         document.querySelector('input[placeholder="Cari indikator"]').addEventListener('input', function() {
             const keyword = this.value.toLowerCase();
             const items = document.querySelectorAll('.indicator-list .list-group-item');
-
             items.forEach(item => {
                 const text = item.textContent.toLowerCase();
                 if (text.includes(keyword)) {
@@ -542,6 +699,8 @@
             });
         });
     </script>
+
+    <!-- Script Dropdown Kecamatan dan Kelurahan -->
     <script>
         const buttons = document.querySelectorAll('#wilayah-buttons button');
         const kecDropdown = document.getElementById('dropdown-kecamatan');
@@ -550,21 +709,15 @@
 
         buttons.forEach(btn => {
             btn.addEventListener('click', () => {
-                // Atur ulang tombol aktif
                 buttons.forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
 
-                // Ambil nilai wilayah
                 const wilayah = btn.getAttribute('data-wilayah');
 
-                // Kota selalu tampil
                 kotaDropdown.classList.remove('d-none');
-
-                // Reset sembunyikan dropdown lain
                 kecDropdown.classList.add('d-none');
                 kelDropdown.classList.add('d-none');
 
-                // Tampilkan dropdown sesuai tombol
                 if (wilayah === 'kecamatan') {
                     kecDropdown.classList.remove('d-none');
                 } else if (wilayah === 'kelurahan') {
@@ -574,6 +727,48 @@
             });
         });
     </script>
+
+    <!-- Script Kategori Filter -->
+    <script>
+        const kategoriButtons = document.querySelectorAll('#kategori-buttons button');
+        const indicatorLists = document.querySelectorAll('.indicator-list');
+
+        function filterKategori(kategori) {
+            indicatorLists.forEach(list => {
+                const heading = list.querySelector('.indikator-heading');
+                if (kategori === 'semua') {
+                    list.classList.remove('d-none');
+                    if (heading) heading.classList.add('d-none');
+                } else {
+                    if (list.getAttribute('data-kategori') === kategori) {
+                        list.classList.remove('d-none');
+                        if (heading) heading.classList.remove('d-none');
+                    } else {
+                        list.classList.add('d-none');
+                    }
+                }
+            });
+        }
+
+        kategoriButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                kategoriButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+
+                const kategori = button.getAttribute('data-kategori');
+                filterKategori(kategori);
+
+                const indikatorButtons = document.querySelectorAll('.indicator-list .list-group-item');
+                indikatorButtons.forEach(b => b.classList.remove('active'));
+            });
+        });
+
+        window.addEventListener('DOMContentLoaded', () => {
+            filterKategori('semua');
+        });
+    </script>
+
+
 
 
 

@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>KBS </title>
+    <title>Sebiduk Linggau </title>
     <meta name="description" content="">
     <meta name="keywords" content="">
 
@@ -47,18 +47,34 @@
 
 <body class="index-page">
 
-    <header id="header" class="header d-flex align-items-center fixed-top">
-        <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
-
+    <header id="header" class="header d-flex align-items-center fixed-top" style="height: 100px;">
+        <div class="container-fluid d-flex align-items-center justify-content-between">
             <a href="index.html" class="logo d-flex align-items-center">
-                <!-- Uncomment the line below if you also wish to use an image logo -->
-                <!-- <img src="{{ asset('template/landingPage') }}/assets/img/logo.png" alt=""> -->
-                <h1 class="sitename">KBS</h1>
+                <!-- Logo deret: BPS, BERAKHLAK, Bangga Melayani Bangsa -->
+                <!-- Logo deret: BPS, BERAKHLAK, Bangga Melayani Bangsa, Linggau -->
+                <div class="d-flex align-items-center me-3">
+                    <img src="{{ asset('template/landingPage') }}/assets/img/bps.png" alt="Logo BPS"
+                        style="height: 75px; margin-right: 12px;">
+
+                    <!-- Disembunyikan di tampilan mobile -->
+                    <img src="{{ asset('template/landingPage') }}/assets/img/berakhlak.png" alt="Logo BERAKHLAK"
+                        class="d-none d-md-block" style="height: 75px; margin-right: 12px;">
+
+                    <!-- Disembunyikan di tampilan mobile -->
+                    <img src="{{ asset('template/landingPage') }}/assets/img/banggamelayanibangsa.png"
+                        alt="Logo Bangga Melayani Bangsa" class="d-none d-md-block"
+                        style="height: 150px; width: auto; margin-right: 12px;">
+
+                    <img src="{{ asset('template/landingPage') }}/assets/img/logolinggau.png" alt="Logo Linggau"
+                        style="height: 75px;">
+                </div>
+
+                <h1 class="sitename m-0" style="font-size: 2rem;">SEBIDUK LINGGAU</h1>
             </a>
 
             <nav id="navmenu" class="navmenu">
                 <ul>
-                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="/" class="active">Home</a></li>
                     <li><a href="dashboard">Dashboard Data</a></li>
                     <li><a href="#login">Login</a></li>
                 </ul>
@@ -68,11 +84,13 @@
         </div>
     </header>
 
+
+
     <main class="main">
 
         <!-- Hero Section -->
         <section id="home" class="hero section dark-background">
-            <img src="{{ asset('template/landingPage') }}/assets/img/hero-bg-2.jpg" alt="" class="hero-bg">
+            <img src="{{ asset('template/landingPage') }}/assets/img/design1.png" alt="" class="hero-bg">
 
             <div class="container">
                 <div class="row gy-4 justify-content-between">
@@ -82,7 +100,10 @@
                     </div>
 
                     <div class="col-lg-6  d-flex flex-column justify-content-center">
-                        <h1 id="myElement">Selamat Datang di <span>Kelurahan Bumi Silampari</span></h1>
+
+                        <h1 id="Element1"></h1>
+                        <h4 class="mb-3" id="Element2"></h4>
+
                         {{-- <p style="color: #000000" data-aos="fade-up" data-aos-delay="300">Program kolaborasi dengan
                             Kelurahan di Kota Lubuk Linggau Untuk
                             Mendorong
@@ -90,7 +111,7 @@
                             Akurat Dalam Pembangunan Kelurahan</p> --}}
                         <div class="d-flex" data-aos="fade-up" data-aos-delay="400">
                             <a href="#about" class="btn-get-started">Get Started</a>
-                            <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8"
+                            <a href="https://www.youtube.com/watch?v=q9BYxUJ-4z4"
                                 class="glightbox btn-watch-video d-flex align-items-center"><i
                                     class="bi bi-play-circle"></i><span>Watch Video</span></a>
                         </div>
@@ -131,44 +152,61 @@
             <div class="container">
 
                 <div class="row gy-4 align-items-center features-item">
+                    <div class="col-md-5 order-1 order-md-2 d-flex align-items-center" data-aos="zoom-out"
+                        data-aos-delay="200">
+                        <img src="{{ asset('template/landingPage') }}/assets/img/satu-data.png" class="img-fluid"
+                            alt="">
+                    </div>
+                    <div class="col-md-7 order-2 order-md-1" data-aos="fade-up" data-aos-delay="200">
+                        <h3>SATU DATA INDONESIA</h3>
+                        {{-- <p class="fst-italic">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore
+                            magna aliqua.
+                        </p> --}}
+                        <p>
+                            Satu Data adalah kebijakan tata kelola data pemerintah yang bertujuan untuk menghasilkan
+                            data yang akurat, mutakhir, terpadu, dapat dipertanggungjawabkan, serta mudah diakses dan
+                            dibagikan antara instansi pusat dan daerah. Satu Data bertujuan untuk meningkatkan
+                            efektivitas pengambilan keputusan dan mendukung pembangunan nasional.
+                        </p>
+                    </div>
+                </div><!-- Features Item -->
+                <div class="row gy-4 align-items-center features-item">
                     <div class="col-md-5 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="100">
                         <img src="{{ asset('template/landingPage') }}/assets/img/descanBPS.png" class="img-fluid"
                             alt="">
                     </div>
                     <div class="col-md-7" data-aos="fade-up" data-aos-delay="100">
                         {{-- <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3> --}}
-                        <h4 class="fst-italic text-center">
+                        <p class="fst-italic text-center">
                             Desa Cantik adalah program kolaborasi dengan kelurahan untuk meningkatkan kesadaran dan
                             pemahaman
                             tentang pentingnya data statistik dalam pengambilan keputusan desa. Kami percaya, dengan
                             data yang tepat, kelurahan bisa berkembang lebih cepat
-                        </h4>
+                        </p>
 
                     </div>
                 </div><!-- Features Item -->
-
-                {{-- <div class="row gy-4 align-items-center features-item">
+                <div class="row gy-4 align-items-center features-item">
                     <div class="col-md-5 order-1 order-md-2 d-flex align-items-center" data-aos="zoom-out"
                         data-aos-delay="200">
-                        <img src="{{ asset('template/landingPage') }}/assets/img/details-2.png" class="img-fluid"
+                        <img src="{{ asset('template/landingPage') }}/assets/img/satu-data.png" class="img-fluid"
                             alt="">
                     </div>
                     <div class="col-md-7 order-2 order-md-1" data-aos="fade-up" data-aos-delay="200">
-                        <h3>Corporis temporibus maiores provident</h3>
-                        <p class="fst-italic">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore
-                            magna aliqua.
+                        <h3>SEBIDUK LINGGAU</h3>
+                        <p class="fst-italic fw-bold">
+                            SATU Biduk, SATU Data, SATU Tujuan
                         </p>
                         <p>
-                            Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-                            reprehenderit in voluptate
-                            velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                            proident, sunt in
-                            culpa qui officia deserunt mollit anim id est laborum
+                            Sebiduk berarti satu perahu atau satu wadah. Berasal dari peribahasa Sebiduk Semare yang
+                            berarti satu
+                            perahu satu tujuan. Cocok dengan tujuan pembuatan sistem untuk menjadi wadah dari data
+                            kelurahan.
                         </p>
                     </div>
-                </div><!-- Features Item --> --}}
+                </div><!-- Features Item -->
 
                 {{-- <div class="row gy-4 align-items-center features-item">
                     <div class="col-md-5 d-flex align-items-center" data-aos="zoom-out">
@@ -568,7 +606,20 @@
 
     <script src="https://unpkg.com/typeit/dist/index.umd.js"></script>
     <script>
-        new TypeIt("#myElement", {}).go();
+        new TypeIt("#Element1", {
+            strings: ["Selamat Datang di <span>SEBIDUK LINGGAU</span>"],
+            speed: 100,
+            html: true,
+            waitUntilVisible: true,
+            afterComplete: (step, instance) => {
+                // instance.destroy(); // komentar dulu
+                new TypeIt("#Element2", {
+                    strings: ["SATU BASIS DATA STATISTIK UNGGUL KELURAHAN LUBUK LINGGAU"],
+                    speed: 100,
+                    waitUntilVisible: true
+                }).go();
+            }
+        }).go();
     </script>
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     <script>
