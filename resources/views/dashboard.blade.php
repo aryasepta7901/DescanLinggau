@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>KBS </title>
+    <title>SEBIDUK LINGGAU </title>
     <meta name="description" content="">
     <meta name="keywords" content="">
 
@@ -54,29 +54,31 @@
                 <!-- Logo deret: BPS, BERAKHLAK, Bangga Melayani Bangsa, Linggau -->
                 <div class="d-flex align-items-center me-3">
                     <img src="{{ asset('template/landingPage') }}/assets/img/bps.png" alt="Logo BPS"
-                        style="height: 75px; margin-right: 12px;">
+                        style="height: 60px; margin-right: 12px;" class="d-none d-md-block">
+                    <img src="{{ asset('template/landingPage') }}/assets/img/logolinggau.png" alt="Logo Linggau"
+                        style="height: 60px; margin-right: 12px;" class="d-none d-md-block">
 
+                    <img src="{{ asset('template/landingPage') }}/assets/img/logosebiduklinggau.png" alt="Logo BPS"
+                        style="height: 60px;">
                     <!-- Disembunyikan di tampilan mobile -->
-                    <img src="{{ asset('template/landingPage') }}/assets/img/berakhlak.png" alt="Logo BERAKHLAK"
-                        class="d-none d-md-block" style="height: 75px; margin-right: 12px;">
-
                     <!-- Disembunyikan di tampilan mobile -->
                     <img src="{{ asset('template/landingPage') }}/assets/img/banggamelayanibangsa.png"
                         alt="Logo Bangga Melayani Bangsa" class="d-none d-md-block"
-                        style="height: 150px; width: auto; margin-right: 12px;">
+                        style="height: 55px; width: auto; margin-right: 12px;">
 
-                    <img src="{{ asset('template/landingPage') }}/assets/img/logolinggau.png" alt="Logo Linggau"
-                        style="height: 75px;">
+                    <img src="{{ asset('template/landingPage') }}/assets/img/berakhlak.png" alt="Logo BERAKHLAK"
+                        class="d-none d-md-block" style="height: 60px; margin-right: 12px;">
+
                 </div>
 
-                <h1 class="sitename m-0" style="font-size: 2rem;">SEBIDUK LINGGAU</h1>
+                {{-- <h1 class="sitename m-0" style="font-size: 2rem;">SEBIDUK LINGGAU</h1> --}}
             </a>
 
             <nav id="navmenu" class="navmenu">
                 <ul>
                     <li><a href="/">Home</a></li>
                     <li><a href="dashboard" class="active">Dashboard Data</a></li>
-                    <li><a href="#login">Login</a></li>
+                    <li><a href="login">Login</a></li>
                 </ul>
                 <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
             </nav>
@@ -84,39 +86,39 @@
         </div>
     </header>
 
+
     <main class="main">
 
         <!-- Page Title -->
-        <div class="page-title dark-background" data-aos="fade">
-            <div class="heading-section " style="padding-top: 100px;">
-                <div class="heading-container d-flex align-items-center justify-content-between text-center flex-wrap">
+        <div class="page-title dark-background" data-aos="fade" style="position: relative;">
+            <img src="{{ asset('template/landingPage') }}/assets/img/design2.png" alt="" class="hero-bg">
 
-                    <!-- Gambar Wakot di kiri -->
+            <div class="heading-section" style="padding-top: 100px; position: relative; z-index: 2;">
+                <div class="heading-container d-flex align-items-center justify-content-center text-center flex-nowrap">
+                    <!-- Gambar Wakot -->
                     <img src="{{ asset('template/landingPage') }}/assets/img/walkot.png" alt="Walikota"
-                        class="wakot-img img-fluid d-none d-md-block" width="300" style="margin: 50px;">
+                        class="wakot-img img-fluid d-none d-md-block"
+                        width="250"style="margin-top: 50px; margin-left: 30px; margin-bottom: 0;">
 
-                    <!-- Teks di tengah -->
-                    <div class="heading-text text-center mx-3 flex-grow-1">
+                    <!-- Teks tengah -->
+                    <div class="heading-text text-center mx-3" style="flex: 1;">
                         <h1>Dashboard Data Kelurahan</h1>
                         <p>Pada halaman ini akan menampilkan data statistik kelurahan dengan isian tabel dan grafik yang
                             menarik.</p>
                     </div>
 
-                    <!-- Gambar Wawakot di kanan -->
+                    <!-- Gambar Wawakot -->
                     <img src="{{ asset('template/landingPage') }}/assets/img/wawakot.png" alt="Wakil Walikota"
-                        class="wawakot-img img-fluid d-none d-md-block" width="330" style="margin: 50px;">
+                        class="wawakot-img img-fluid d-none d-md-block"
+                        width="250"style="margin-top: 50px; margin-right: 30px; margin-bottom: 0;">
                 </div>
             </div>
-            {{-- <nav class="breadcrumbs">
-                <div class="container">
-                    <ol>
-                        <li><a href="index.html">Home</a></li>
-                        <li class="current">Starter Page</li>
-                    </ol>
-                </div>
-            </nav> --}}
 
-        </div><!-- End Page Title -->
+
+
+        </div>
+
+        <!-- End Page Title -->
 
         <!-- Starter Section Section -->
         <section id="starter-section" class="starter-section section">
@@ -156,10 +158,14 @@
                         <div id="dropdown-kecamatan" class="mb-2 d-none">
                             <label for="kecamatanSelect" class="form-label">Pilih Kecamatan</label>
                             <select class="form-select" id="kecamatanSelect">
-                                <option selected>Lubuk Linggau Barat I</option>
-                                <option>Lubuk Linggau Barat II</option>
-                                <option>Lubuk Linggau Timur I</option>
-                                <option>Lubuk Linggau Timur II</option>
+                                {{-- <option value="LUBUK LINGGAU BARAT I">LUBUK LINGGAU BARAT I</option>
+                                <option value="LUBUK LINGGAU BARAT Ii">LUBUK LINGGAU BARAT II</option>
+                                <option value="LUBUK LINGGAU SELATAN I">LUBUK LINGGAU SELATAN I</option>
+                                <option value="LUBUK LINGGAU SELATAN II">LUBUK LINGGAU SELATAN II</option>
+                                <option value="LUBUK LINGGAU TIMUR I">LUBUK LINGGAU TIMUR I</option>
+                                <option value="LUBUK LINGGAU TIMUR II">LUBUK LINGGAU TIMUR II</option>
+                                <option value="LUBUK LINGGAU UTARA I">LUBUK LINGGAU UTARA I</option>
+                                <option value="LUBUK LINGGAU UTARA II">LUBUK LINGGAU UTARA II</option> --}}
                             </select>
                         </div>
 
@@ -167,9 +173,15 @@
                         <div id="dropdown-kelurahan" class="mb-2 d-none">
                             <label for="kelurahanSelect" class="form-label">Pilih Kelurahan</label>
                             <select class="form-select" id="kelurahanSelect">
-                                <option selected>Kelurahan A</option>
-                                <option>Kelurahan B</option>
-                                <option>Kelurahan C</option>
+                                {{-- <option value="">-- Pilih Kelurahan --</option>
+                                <option value="SIDOREJO">SIDOREJO</option>
+                                <option value="TAPAK LEBAR">TAPAK LEBAR</option>
+                                <option value="ULAK LEBAR">ULAK LEBAR</option>
+                                <option value="BANDUNG KANAN">BANDUNG KANAN</option>
+                                <option value="KEPUTRAAN">KEPUTRAAN</option>
+                                <option value="LUBUKLINGGAU ULU">LUBUKLINGGAU ULU</option>
+                                <option value="LUBUKLINGGAU ILIR">LUBUKLINGGAU ILIR</option>
+                                <option value="PASAR PERMIRI">PASAR PERMIRI</option> --}}
                             </select>
                         </div>
 
@@ -345,8 +357,11 @@
 
                         <!-- Konten Jenis Kelamin -->
                         <div id="konten-jenis-kelamin" class="indikator-konten d-none">
+                            <div style="height:300px" id="map" class="col-lg-10 mx-auto mb-3">
+
+                            </div>
                             <div class="chart-container">
-                                <h5>Grafik Jumlah Penduduk Menurut Kecamatan dan Jenis Kelamin di Kota Lubuk Linggau
+                                <h5>Grafik Jumlah Penduduk Menurut Jenis Kelamin di Kelurahan Sidorejo
                                 </h5>
                                 <div id="chart" class="card-body">
                                     <!-- Tempatkan chart di sini -->
@@ -354,28 +369,115 @@
                             </div>
 
                             <div class="chart-container">
-                                <h5 class="mt-4">Jumlah Penduduk Menurut Kecamatan dan Jenis Kelamin di Kota Lubuk
-                                    Linggau</h5>
-                                <table class="table table-bordered mt-3">
-                                    <thead class="table-light">
+                                <h5 class="mt-4">Jumlah Penduduk Menurut Jenis Kelamin di Kelurahan Sidorejo</h5>
+                                <table class="table table-bordered table-responsive mt-3 text-center">
+                                    <thead>
                                         <tr>
-                                            <th>Kota</th>
-                                            <th>Laki-Laki</th>
+                                            <th rowspan="2" class="text-center">RT</th>
+                                            <th colspan="2">Jenis Kelamin</th>
+                                            <th rowspan="2">Jumlah</th>
+                                            <th rowspan="2">Rasio L/P</th>
+                                        </tr>
+                                        <tr>
+                                            <th>Laki-laki</th>
                                             <th>Perempuan</th>
-                                            <th>Rasio Jenis Kelamin</th>
-                                            <th>Jumlah</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td>Lubuk Linggau</td>
-                                            <td>34.000</td>
-                                            <td>32.500</td>
-                                            <td>1.05</td>
-                                            <td>66.500</td>
+                                            <td>RT 1</td>
+                                            <td>125</td>
+                                            <td>123</td>
+                                            <td>248</td>
+                                            <td>101.63</td>
+                                        </tr>
+                                        <tr>
+                                            <td>RT 2</td>
+                                            <td>120</td>
+                                            <td>130</td>
+                                            <td>250</td>
+                                            <td>92.31</td>
+                                        </tr>
+                                        <tr>
+                                            <td>RT 3</td>
+                                            <td>231</td>
+                                            <td>171</td>
+                                            <td>402</td>
+                                            <td>135.09</td>
+                                        </tr>
+                                        <tr>
+                                            <td>RT 4</td>
+                                            <td>119</td>
+                                            <td>108</td>
+                                            <td>227</td>
+                                            <td>110.19</td>
+                                        </tr>
+                                        <tr>
+                                            <td>RT 5</td>
+                                            <td>71</td>
+                                            <td>73</td>
+                                            <td>144</td>
+                                            <td>97.26</td>
+                                        </tr>
+                                        <tr>
+                                            <td>RT 6</td>
+                                            <td>154</td>
+                                            <td>154</td>
+                                            <td>308</td>
+                                            <td>100.00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>RT 7</td>
+                                            <td>147</td>
+                                            <td>145</td>
+                                            <td>292</td>
+                                            <td>101.38</td>
+                                        </tr>
+                                        <tr>
+                                            <td>RT 8</td>
+                                            <td>168</td>
+                                            <td>153</td>
+                                            <td>321</td>
+                                            <td>109.80</td>
+                                        </tr>
+                                        <tr>
+                                            <td>RT 9</td>
+                                            <td>129</td>
+                                            <td>121</td>
+                                            <td>250</td>
+                                            <td>106.61</td>
+                                        </tr>
+                                        <tr>
+                                            <td>RT 10</td>
+                                            <td>162</td>
+                                            <td>148</td>
+                                            <td>310</td>
+                                            <td>109.46</td>
+                                        </tr>
+                                        <tr>
+                                            <td>RT 11</td>
+                                            <td>157</td>
+                                            <td>225</td>
+                                            <td>382</td>
+                                            <td>69.78</td>
+                                        </tr>
+                                        <tr>
+                                            <td>RT 12</td>
+                                            <td>135</td>
+                                            <td>126</td>
+                                            <td>261</td>
+                                            <td>107.14</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Kelurahan SIDOREJO</strong></td>
+                                            <td><strong>1748</strong></td>
+                                            <td><strong>1707</strong></td>
+                                            <td><strong>3455</strong></td>
+                                            <td><strong>102.40</strong></td>
                                         </tr>
                                     </tbody>
                                 </table>
+
                             </div>
                         </div>
 
@@ -525,28 +627,55 @@
         new TypeIt("#myElement", {}).go();
     </script>
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+
     <script>
         var options = {
             series: [{
-                data: [2500, 2000]
-            }],
+                name: 'Laki-Laki',
+                data: [125, 120, 231, 119, 71, 154, 147, 168, 129, 162, 157, 135]
+            }, {
+                name: 'Perempuan',
+                data: [123, 130, 171, 108, 73, 154, 145, 153, 121, 148, 225, 126]
+            }, ],
             chart: {
                 type: 'bar',
                 height: 350
             },
             plotOptions: {
                 bar: {
-                    borderRadius: 4,
-                    borderRadiusApplication: 'end',
-                    horizontal: true,
-
-                }
+                    horizontal: false,
+                    columnWidth: '55%',
+                    borderRadius: 5,
+                    borderRadiusApplication: 'end'
+                },
             },
             dataLabels: {
-                enabled: true
+                enabled: false
+            },
+            stroke: {
+                show: true,
+                width: 2,
+                colors: ['transparent']
             },
             xaxis: {
-                categories: ['Laki-Laki', 'Perempuan'],
+                categories: ['RT 01', 'RT 02', 'RT 03', 'RT 04', 'RT 05', 'RT 06', 'RT 07', 'RT 08', 'RT 09', 'RT 10',
+                    'RT 11'
+                ],
+            },
+            // yaxis: {
+            //     title: {
+            //         text: '$ (thousands)'
+            //     }
+            // },
+            fill: {
+                opacity: 1
+            },
+            tooltip: {
+                y: {
+                    formatter: function(val) {
+                        return "$ " + val + " thousands"
+                    }
+                }
             }
         };
 
@@ -637,6 +766,174 @@
 
 
     <script>
+        document.addEventListener('DOMContentLoaded', async function() {
+            // Inisialisasi peta global
+            window.map = L.map('map').setView([-3.2993573601203274, 102.85836231521746], 12);
+            L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                maxZoom: 19,
+                attribution: '&copy; OpenStreetMap',
+            }).addTo(window.map);
+
+            const kecamatanSelect = document.getElementById('kecamatanSelect');
+            const kelurahanSelect = document.getElementById('kelurahanSelect');
+
+            const kecamatanLayer = L.layerGroup().addTo(window.map);
+            const desaLayer = L.layerGroup().addTo(window.map);
+
+            // Load GeoJSON
+            const [resKec, resDesa] = await Promise.all([
+                fetch('wilayah/kec_1674.json'),
+                fetch('wilayah/desa_1674.json'),
+            ]);
+            const dataKecamatan = await resKec.json();
+            const dataDesa = await resDesa.json();
+
+            // Isi dropdown kecamatan
+            const kecSet = new Set();
+            dataKecamatan.features.forEach(f => {
+                const name = f.properties.nmkec;
+                if (!kecSet.has(name)) {
+                    kecSet.add(name);
+                    const option = document.createElement('option');
+                    option.value = name;
+                    option.textContent = name;
+                    kecamatanSelect.appendChild(option);
+                }
+            });
+
+            function populateKelurahan(kecamatanName) {
+                kelurahanSelect.innerHTML = '<option value="">-- Pilih Kelurahan --</option>';
+                kelurahanSelect.disabled = true;
+
+                const kelSet = new Set();
+                dataDesa.features.forEach(f => {
+                    if (f.properties.nmkec === kecamatanName) {
+                        kelSet.add(f.properties.nmdesa);
+                    }
+                });
+
+                kelSet.forEach(name => {
+                    const option = document.createElement('option');
+                    option.value = name;
+                    option.textContent = name;
+                    kelurahanSelect.appendChild(option);
+                });
+
+                kelurahanSelect.disabled = kelSet.size === 0;
+            }
+
+            function clearLayers() {
+                kecamatanLayer.clearLayers();
+                desaLayer.clearLayers();
+            }
+
+            function getColor(name) {
+                let hash = 0;
+                for (let i = 0; i < name.length; i++) {
+                    hash = name.charCodeAt(i) + ((hash << 5) - hash);
+                }
+                let color = '#';
+                for (let i = 0; i < 3; i++) {
+                    let value = (hash >> (i * 8)) & 0xff;
+                    color += ('00' + value.toString(16)).slice(-2);
+                }
+                return color;
+            }
+
+            function updateMap() {
+                clearLayers();
+
+                const kecamatanVal = kecamatanSelect.value;
+                const kelurahanVal = kelurahanSelect.value;
+
+                if (!kecamatanVal || !kelurahanVal) return;
+
+                // Tambahkan boundary kecamatan
+                const filteredKec = {
+                    type: 'FeatureCollection',
+                    features: dataKecamatan.features.filter(f => f.properties.nmkec === kecamatanVal),
+                };
+                const kecLayer = L.geoJSON(filteredKec, {
+                    style: {
+                        color: 'red',
+                        weight: 2,
+                        fillOpacity: 0,
+                    },
+                    onEachFeature: (feature, layer) => {
+                        layer.bindPopup('Kecamatan: ' + feature.properties.nmkec);
+                    },
+                }).addTo(kecamatanLayer);
+
+                // Tambahkan kelurahan
+                const filteredDesa = {
+                    type: 'FeatureCollection',
+                    features: dataDesa.features.filter(
+                        f => f.properties.nmkec === kecamatanVal && f.properties.nmdesa === kelurahanVal
+                    ),
+                };
+                const desaGeoLayer = L.geoJSON(filteredDesa, {
+                    style: feature => ({
+                        color: getColor(feature.properties.nmdesa),
+                        weight: 1,
+                        fillOpacity: 0.4,
+                    }),
+                    onEachFeature: (feature, layer) => {
+                        layer.bindPopup(
+                            `<b>Kelurahan:</b> ${feature.properties.nmdesa}<br><b>Kecamatan:</b> ${feature.properties.nmkec}`
+                        );
+                    },
+                }).addTo(desaLayer);
+
+                // Pastikan map resize
+                window.map.invalidateSize();
+
+                // Zoom dan scroll ke lokasi kelurahan
+                // setTimeout(() => {
+                //     const bounds = desaGeoLayer.getBounds();
+
+                //     if (!bounds.isValid()) {
+                //         window.map.setView([-3.2993573601203274, 102.85836231521746], 13);
+                //         return;
+                //     }
+
+                //     map.fitBounds(bounds.pad(0.3), {
+                //         maxZoom: 15
+                //     });
+                // }, 200);
+            }
+
+            function updateUI() {
+                if (kecamatanSelect.value && kelurahanSelect.value) {
+                    updateMap();
+                } else {
+                    clearLayers();
+                }
+            }
+
+            kecamatanSelect.addEventListener('change', () => {
+                kelurahanSelect.value = '';
+                clearLayers();
+
+                if (kecamatanSelect.value) {
+                    populateKelurahan(kecamatanSelect.value);
+                    kelurahanSelect.disabled = false;
+                } else {
+                    kelurahanSelect.disabled = true;
+                }
+
+                updateUI();
+            });
+
+            kelurahanSelect.addEventListener('change', updateUI);
+
+            // Inisialisasi
+            kelurahanSelect.disabled = true;
+            clearLayers();
+        });
+    </script>
+
+
+    <script>
         function activateIndicator(target) {
             document.querySelectorAll('.indicator-list .list-group-item').forEach(btn => {
                 btn.classList.remove('active');
@@ -649,20 +946,25 @@
             });
             const selectedContent = document.getElementById(`konten-${target}`);
             if (selectedContent) selectedContent.classList.remove('d-none');
+
+            // Invalidate size peta saat konten berubah, beri delay agar peta sudah visible
+            if (window.map) {
+                setTimeout(() => {
+                    window.map.invalidateSize();
+                }, 300);
+            }
         }
 
         document.addEventListener('DOMContentLoaded', () => {
             const savedIndicator = sessionStorage.getItem('activeIndicator');
 
-            // Deteksi apakah ini reload halaman (refresh)
-            const navEntries = performance.getEntriesByType("navigation");
+            // Deteksi reload halaman (refresh)
+            const navEntries = performance.getEntriesByType('navigation');
             const isReload = navEntries.length > 0 && navEntries[0].type === 'reload';
 
             if (isReload && savedIndicator) {
-                // Jika refresh dan ada data di sessionStorage, restore indikator terakhir
                 activateIndicator(savedIndicator);
             } else {
-                // Jika bukan refresh (misal pindah halaman dan kembali), reset ke default
                 activateIndicator('default');
                 sessionStorage.removeItem('activeIndicator');
             }
@@ -676,8 +978,6 @@
             });
         });
     </script>
-
-
 
 
 
@@ -767,6 +1067,7 @@
             filterKategori('semua');
         });
     </script>
+
 
 
 

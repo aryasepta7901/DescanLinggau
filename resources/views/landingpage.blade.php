@@ -54,29 +54,31 @@
                 <!-- Logo deret: BPS, BERAKHLAK, Bangga Melayani Bangsa, Linggau -->
                 <div class="d-flex align-items-center me-3">
                     <img src="{{ asset('template/landingPage') }}/assets/img/bps.png" alt="Logo BPS"
-                        style="height: 75px; margin-right: 12px;">
+                        style="height: 60px; margin-right: 12px;" class="d-none d-md-block">
+                    <img src="{{ asset('template/landingPage') }}/assets/img/logolinggau.png" alt="Logo Linggau"
+                        style="height: 60px; margin-right: 12px;" class="d-none d-md-block">
 
+                    <img src="{{ asset('template/landingPage') }}/assets/img/logosebiduklinggau.png" alt="Logo BPS"
+                        style="height: 60px;">
                     <!-- Disembunyikan di tampilan mobile -->
-                    <img src="{{ asset('template/landingPage') }}/assets/img/berakhlak.png" alt="Logo BERAKHLAK"
-                        class="d-none d-md-block" style="height: 75px; margin-right: 12px;">
-
                     <!-- Disembunyikan di tampilan mobile -->
                     <img src="{{ asset('template/landingPage') }}/assets/img/banggamelayanibangsa.png"
                         alt="Logo Bangga Melayani Bangsa" class="d-none d-md-block"
-                        style="height: 150px; width: auto; margin-right: 12px;">
+                        style="height: 55px; width: auto; margin-right: 12px;">
 
-                    <img src="{{ asset('template/landingPage') }}/assets/img/logolinggau.png" alt="Logo Linggau"
-                        style="height: 75px;">
+                    <img src="{{ asset('template/landingPage') }}/assets/img/berakhlak.png" alt="Logo BERAKHLAK"
+                        class="d-none d-md-block" style="height: 60px; margin-right: 12px;">
+
                 </div>
 
-                <h1 class="sitename m-0" style="font-size: 2rem;">SEBIDUK LINGGAU</h1>
+                {{-- <h1 class="sitename m-0" style="font-size: 2rem;">SEBIDUK LINGGAU</h1> --}}
             </a>
 
             <nav id="navmenu" class="navmenu">
                 <ul>
                     <li><a href="/" class="active">Home</a></li>
                     <li><a href="dashboard">Dashboard Data</a></li>
-                    <li><a href="#login">Login</a></li>
+                    <li><a href="login">Login</a></li>
                 </ul>
                 <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
             </nav>
@@ -90,13 +92,13 @@
 
         <!-- Hero Section -->
         <section id="home" class="hero section dark-background">
-            <img src="{{ asset('template/landingPage') }}/assets/img/design1.png" alt="" class="hero-bg">
+            <img src="{{ asset('template/landingPage') }}/assets/img/design2.png" alt="" class="hero-bg">
 
             <div class="container">
                 <div class="row gy-4 justify-content-between">
                     <div class="col-lg-4 order-lg-last hero-img" data-aos="zoom-out" data-aos-delay="100">
-                        <img src="{{ asset('template/landingPage') }}/assets/img/logolinggau.png"
-                            class="img-fluid animated" alt="">
+                        <img src="{{ asset('template/landingPage') }}/assets/img/logosebiduklinggau.png"
+                            class="img-fluid animated">
                     </div>
 
                     <div class="col-lg-6  d-flex flex-column justify-content-center">
@@ -175,26 +177,28 @@
                 <div class="row gy-4 align-items-center features-item">
                     <div class="col-md-5 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="100">
                         <img src="{{ asset('template/landingPage') }}/assets/img/descanBPS.png" class="img-fluid"
-                            alt="">
+                            alt="" style="width: 70%; height: auto;">
                     </div>
                     <div class="col-md-7" data-aos="fade-up" data-aos-delay="100">
                         {{-- <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3> --}}
-                        <p class="fst-italic text-center">
+                        <h4 class="fst-italic text-center">
                             Desa Cantik adalah program kolaborasi dengan kelurahan untuk meningkatkan kesadaran dan
                             pemahaman
                             tentang pentingnya data statistik dalam pengambilan keputusan desa. Kami percaya, dengan
                             data yang tepat, kelurahan bisa berkembang lebih cepat
-                        </p>
+                        </h4>
 
                     </div>
                 </div><!-- Features Item -->
                 <div class="row gy-4 align-items-center features-item">
                     <div class="col-md-5 order-1 order-md-2 d-flex align-items-center" data-aos="zoom-out"
                         data-aos-delay="200">
-                        <img src="{{ asset('template/landingPage') }}/assets/img/satu-data.png" class="img-fluid"
-                            alt="">
+                        <img src="{{ asset('template/landingPage') }}/assets/img/sebiduklinggau.png"
+                            class="img-fluid" alt="">
                     </div>
-                    <div class="col-md-7 order-2 order-md-1" data-aos="fade-up" data-aos-delay="200">
+                    <div class="col-md-7
+                            order-2 order-md-1" data-aos="fade-up"
+                        data-aos-delay="200">
                         <h3>SEBIDUK LINGGAU</h3>
                         <p class="fst-italic fw-bold">
                             SATU Biduk, SATU Data, SATU Tujuan
@@ -300,155 +304,173 @@
             <div class="container">
                 <div class="row mb-3">
                     <div class="col-lg-6" data-aos="fade-up" data-aos-delay="50">
-                        <label for="kelurahanSelect" class="form-label">Pilih Kecamatan</label>
-                        <select id="kelurahanSelect" class="form-select">
+                        <label for="kecamatanSelect" class="form-label">Pilih Kecamatan</label>
+                        <select id="kecamatanSelect" class="form-select">
                             <option value="">-- Pilih Kecamatan --</option>
-                            <option value="lubuk-kupang">Lubuk Kupang</option>
-                            <option value="marga-rahayu">Marga Rahayu</option>
-                            <option value="belalau">Belalau</option>
-                            <option value="watervang">Watervang</option>
-                            <option value="jogoboyo">Jogoboyo</option>
-                            <option value="mesat-jaya">Mesat Jaya</option>
+                            {{-- <option value="LUBUK LINGGAU BARAT I">LUBUK LINGGAU BARAT I</option>
+                            <option value="LUBUK LINGGAU BARAT Ii">LUBUK LINGGAU BARAT II</option>
+                            <option value="LUBUK LINGGAU SELATAN I">LUBUK LINGGAU SELATAN I</option>
+                            <option value="LUBUK LINGGAU SELATAN II">LUBUK LINGGAU SELATAN II</option>
+                            <option value="LUBUK LINGGAU TIMUR I">LUBUK LINGGAU TIMUR I</option>
+                            <option value="LUBUK LINGGAU TIMUR II">LUBUK LINGGAU TIMUR II</option>
+                            <option value="LUBUK LINGGAU UTARA I">LUBUK LINGGAU UTARA I</option>
+                            <option value="LUBUK LINGGAU UTARA II">LUBUK LINGGAU UTARA II</option> --}}
                         </select>
                     </div>
                     <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
                         <label for="kelurahanSelect" class="form-label">Pilih Kelurahan</label>
                         <select id="kelurahanSelect" class="form-select">
                             <option value="">-- Pilih Kelurahan --</option>
-                            <option value="lubuk-kupang">Lubuk Kupang</option>
-                            <option value="marga-rahayu">Marga Rahayu</option>
-                            <option value="belalau">Belalau</option>
-                            <option value="watervang">Watervang</option>
-                            <option value="jogoboyo">Jogoboyo</option>
-                            <option value="mesat-jaya">Mesat Jaya</option>
+                            {{-- <option value="SIDOREJO">SIDOREJO</option>
+                            <option value="TAPAK LEBAR">TAPAK LEBAR</option>
+                            <option value="ULAK LEBAR">ULAK LEBAR</option>
+                            <option value="BANDUNG KANAN">BANDUNG KANAN</option>
+                            <option value="KEPUTRAAN">KEPUTRAAN</option>
+                            <option value="LUBUKLINGGAU ULU">LUBUKLINGGAU ULU</option>
+                            <option value="LUBUKLINGGAU ILIR">LUBUKLINGGAU ILIR</option>
+                            <option value="PASAR PERMIRI">PASAR PERMIRI</option> --}}
+
                         </select>
                     </div>
                 </div>
 
-
-                <!-- Tambahkan Features di sini -->
-                <!-- Fitur tambahan di dalam section details -->
-                <div class="features">
-                    <div class="row gy-4 mb-4">
-                        <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="100">
-                            <div class="features-item">
-                                <i class="bi bi-geo-alt" style="color: #ffbb2c;"></i>
-                                <p><a href="#">Lubuk Kupang</a></p>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="200">
-                            <div class="features-item">
-                                <i class="bi bi-building" style="color: #5578ff;"></i>
-                                <p><a href="#">xxx Hektare</a></p>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="300">
-                            <div class="features-item">
-                                <i class="bi bi-people" style="color: #e80368;"></i>
-                                <p><a href="#">8505 Jumlah Penduduk</a></p>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="400">
-                            <div class="features-item">
-                                <i class="bi bi-geo-fill" style="color: #e361ff;"></i>
-                                <p><a href="#">xxxx</a></p>
-                            </div>
-                        </div>
+                <!-- Konten Default (Kosong Awal) -->
+                <div id="default-message" class="indikator-konten" data-aos="fade-up" data-aos-delay="50">
+                    <div class="text-center py-5 instruction-box">
+                        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10
+             10-4.48 10-10S17.52 2 12 2zm.75 15h-1.5v-6h1.5v6zm0-8h-1.5V7h1.5v2z" />
+                        </svg>
+                        <h5>Silakan pilih Kecamatan dan Kelurahan</h5>
+                        <p class="text-muted">Untuk Menampilkan Ringkasan Data dan Statistik Dasar Kelurahan, Silahkan
+                            Pilih Kecamatan dan Kelurahan tertentu</p>
                     </div>
                 </div>
-
-                <!-- End Inserted Features -->
-
-                <!-- AREA CHART -->
-                <div class="row" data-aos="fade-up" data-aos-delay="500">
-                    <div style="height:300px" id="map" class="col-lg-10 mx-auto mb-3">
-
-                    </div>
-
-                    <div class="col-lg-6">
-                        <!-- barchart -->
-                        <div class="card card-danger">
-                            <div class="card-header">
-                                <h3 class="card-title">Jumlah Penduduk</h3>
-
-                                <div class="card-tools">
-                                    <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                                        <i class="fas fa-minus"></i>
-                                    </button>
-                                    <button type="button" class="btn btn-tool" data-card-widget="remove">
-                                        <i class="fas fa-times"></i>
-                                    </button>
+                <div id="content-wrapper" style="display: none;">
+                    <!-- Tambahkan Features di sini -->
+                    <!-- Fitur tambahan di dalam section details -->
+                    <div class="features">
+                        <div class="row gy-4 mb-4">
+                            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                                <div class="features-item">
+                                    <i class="bi bi-geo-alt" style="color: #ffbb2c;"></i>
+                                    <p><a href="#">SIDOREJO</a></p>
                                 </div>
                             </div>
-                            <div id="chart" class="card-body">
-
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <!-- Pie Chart -->
-                        <div class="card card-danger">
-                            <div class="card-header">
-                                <h3 class="card-title">Prasarana Kesehatan</h3>
-
-                                <div class="card-tools">
-                                    <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                                        <i class="fas fa-minus"></i>
-                                    </button>
-                                    <button type="button" class="btn btn-tool" data-card-widget="remove">
-                                        <i class="fas fa-times"></i>
-                                    </button>
+                            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                                <div class="features-item">
+                                    <i class="bi bi-building" style="color: #5578ff;"></i>
+                                    <p><a href="#">2,705 Hektare</a></p>
                                 </div>
                             </div>
-                            <div id="piechart" class="card-body">
-
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="col-lg-6 mt-3">
-                        <!-- box Chart -->
-                        <div class="card card-danger">
-                            <div class="card-header">
-                                <h3 class="card-title">Data xxxx</h3>
-
-                                <div class="card-tools">
-                                    <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                                        <i class="fas fa-minus"></i>
-                                    </button>
-                                    <button type="button" class="btn btn-tool" data-card-widget="remove">
-                                        <i class="fas fa-times"></i>
-                                    </button>
+                            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                                <div class="features-item">
+                                    <i class="bi bi-people" style="color: #e80368;"></i>
+                                    <p><a href="#">3.395 Jumlah Penduduk</a></p>
                                 </div>
                             </div>
-                            <div id="barchart" class="card-body">
-
-                            </div>
-
+                            {{-- <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                                <div class="features-item">
+                                    <i class="bi bi-geo-fill" style="color: #e361ff;"></i>
+                                    <p><a href="#">xxxx</a></p>
+                                </div>
+                            </div> --}}
                         </div>
                     </div>
-
-                    <div class="col-lg-6 mt-3">
-                        <!-- box Chart -->
-                        <div class="card card-danger">
-                            <div class="card-header">
-                                <h3 class="card-title">Data xxxx</h3>
-
-                                <div class="card-tools">
-                                    <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                                        <i class="fas fa-minus"></i>
-                                    </button>
-                                    <button type="button" class="btn btn-tool" data-card-widget="remove">
-                                        <i class="fas fa-times"></i>
-                                    </button>
-                                </div>
-                            </div>
-                            <div id="linechart" class="card-body">
-
-                            </div>
+                    <!-- End Inserted Features -->
+                    <!-- AREA CHART -->
+                    <div class="row" data-aos="fade-up" data-aos-delay="500">
+                        <div style="height:300px" id="map" class="col-lg-10 mx-auto mb-3">
 
                         </div>
+
+                        <div class="col-lg-6">
+                            <!-- barchart -->
+                            <div class="card card-danger">
+                                <div class="card-header">
+                                    <h3 class="card-title">Jumlah Penduduk</h3>
+
+                                    <div class="card-tools">
+                                        <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                            <i class="fas fa-minus"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-tool" data-card-widget="remove">
+                                            <i class="fas fa-times"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div id="chart" class="card-body" style="height: 300px">
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <!-- Pie Chart -->
+                            <div class="card card-danger">
+                                <div class="card-header">
+                                    <h3 class="card-title">Persentase Penduduk Kelurahan Sidorejo
+                                        Menurut Ijazah Tertinggi yang Ditamatkan</h3>
+
+                                    <div class="card-tools">
+                                        <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                            <i class="fas fa-minus"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-tool" data-card-widget="remove">
+                                            <i class="fas fa-times"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div id="piechart" class="card-body">
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-lg-6 mt-3">
+                            <!-- box Chart -->
+                            <div class="card card-danger">
+                                <div class="card-header">
+                                    <h3 class="card-title">Jumlah Sekolah Menurut Jenjang Pendidikan</h3>
+
+                                    <div class="card-tools">
+                                        <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                            <i class="fas fa-minus"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-tool" data-card-widget="remove">
+                                            <i class="fas fa-times"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div id="barchart" class="card-body">
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-lg-6 mt-3">
+                            <!-- Pie Chart -->
+                            <div class="card card-danger">
+                                <div class="card-header">
+                                    <h3 class="card-title">Prasarana Kesehatan</h3>
+
+                                    <div class="card-tools">
+                                        <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                            <i class="fas fa-minus"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-tool" data-card-widget="remove">
+                                            <i class="fas fa-times"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div id="piechart2" class="card-body">
+
+                                </div>
+
+                            </div>
+                        </div>
+
+
                     </div>
                 </div>
 
@@ -462,7 +484,7 @@
 
         </section><!-- /Details Section -->
 
-        <!-- Faq Section -->
+        {{-- <!-- Faq Section -->
         <section id="faq" class="faq section light-background">
 
             <div class="container-fluid">
@@ -534,7 +556,7 @@
 
             </div>
 
-        </section><!-- /Faq Section -->
+        </section><!-- /Faq Section --> --}}
 
 
     </main>
@@ -562,11 +584,12 @@
                 <div class="col-lg-4 col-md-12 footer-links">
                     <h4>Layanan Kami</h4>
                     <ul>
-                        <li><a href="#">Website BPS Kota Lubuk Linggau</a></li>
-                        <li><a href="#">Pelayanan Statistik Terpadu Digital</a></li>
-                        <li><a href="#">Rekomendasi Statistik</a></li>
-                        <li><a href="#">Indah HUB</a></li>
-                        <li><a href="#">xxx</a></li>
+                        <li><a href="https://lubuklinggaukota.bps.go.id/" target="_blank">Website BPS Kota Lubuk
+                                Linggau</a></li>
+                        <li><a href="https://pst.bps.go.id/" target="_blank">Pelayanan Statistik Terpadu Digital</a>
+                        </li>
+                        <li><a href="https://romantik.web.bps.go.id/" target="_blank">Rekomendasi Statistik</a></li>
+                        <li><a href="https://indah.bps.go.id/" target="_blank">Indonesia Data HUB</a></li>
                     </ul>
                 </div>
 
@@ -621,15 +644,18 @@
             }
         }).go();
     </script>
+
+
+
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     <script>
         var options = {
             series: [{
-                data: [2500, 2000]
+                data: [1718, 1677]
             }],
             chart: {
                 type: 'bar',
-                height: 350
+                width: '100%'
             },
             plotOptions: {
                 bar: {
@@ -652,34 +678,113 @@
     </script>
     <script>
         var options = {
-            series: [44, 55, 13, 43, 22],
+            series: [141, 262, 268, 275, 739],
             chart: {
-                width: 380,
                 type: 'pie',
-                height: 350
+                height: 350,
+                width: '100%',
+                toolbar: {
+                    show: true, // Tampilkan toolbar
+                    tools: {
+                        download: true, // Aktifkan tombol download
+                    }
+                },
             },
-            labels: ['A', 'B', 'C', 'D', 'E'],
+            labels: [
+                'Tidak Tamat SD',
+                'SD/Sederajat',
+                'SMP/Sederajat',
+                'Perguruan Tinggi/Sederajat',
+                'SMA/Sederajat'
+            ],
+
             responsive: [{
-                breakpoint: 480,
-                options: {
-                    chart: {
-                        width: 200
-                    },
-                    legend: {
-                        position: 'bottom'
+                    breakpoint: 768,
+                    options: {
+                        chart: {
+                            height: 280,
+                            width: '100%'
+                        },
+                        legend: {
+                            position: 'bottom'
+                        }
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    options: {
+                        chart: {
+                            height: 220,
+                            width: '100%'
+                        },
+                        legend: {
+                            position: 'bottom'
+                        }
                     }
                 }
-            }]
+            ]
         };
+
 
         var chart = new ApexCharts(document.querySelector("#piechart"), options);
         chart.render();
     </script>
     <script>
         var options = {
+            series: [1, 2, 2],
+            chart: {
+                type: 'pie',
+                height: 350,
+                width: '100%',
+                toolbar: {
+                    show: true, // Tampilkan toolbar
+                    tools: {
+                        download: true, // Aktifkan tombol download
+                    }
+                },
+            },
+            labels: [
+                'Praktik Dokter',
+                'Praktik Bidan',
+                'Posyandu',
+            ],
+
+            responsive: [{
+                    breakpoint: 768,
+                    options: {
+                        chart: {
+                            height: 280,
+                            width: '100%'
+                        },
+                        legend: {
+                            position: 'bottom'
+                        }
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    options: {
+                        chart: {
+                            height: 220,
+                            width: '100%'
+                        },
+                        legend: {
+                            position: 'bottom'
+                        }
+                    }
+                }
+            ]
+        };
+
+
+        var chart = new ApexCharts(document.querySelector("#piechart2"), options);
+        chart.render();
+    </script>
+    <script>
+        var options = {
             series: [{
-                name: 'Inflation',
-                data: [2.3, 3.1, 4.0, 10.1, 4.0, 3.6, 3.2, 2.3, 1.4, 0.8, 0.5, 0.2]
+                name: 'DATA',
+                data: [3, 4, 0, 1, 0, 0]
             }],
             chart: {
                 height: 350,
@@ -695,9 +800,9 @@
             },
             dataLabels: {
                 enabled: true,
-                formatter: function(val) {
-                    return val + "%";
-                },
+                // formatter: function(val) {
+                //     return val + "%";
+                // },
                 offsetY: -20,
                 style: {
                     fontSize: '12px',
@@ -706,13 +811,19 @@
             },
 
             xaxis: {
-                categories: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                categories: ["TK/RA/BA", "SD/MI", "SMP/MTs", "SMA/MA", "SMK/MAK", "PERGURUAN TINGGI"],
                 position: 'bottom',
                 axisBorder: {
                     show: false
                 },
                 axisTicks: {
                     show: false
+                },
+                labels: {
+                    rotate: -90, // Ini membuat tulisan vertikal ke bawah
+                    style: {
+                        fontSize: '12px'
+                    }
                 },
                 crosshairs: {
                     fill: {
@@ -788,18 +899,299 @@
         var chart = new ApexCharts(document.querySelector("#linechart"), options);
         chart.render();
     </script>
+
+
+    {{-- Script Peta dan tampil ringkas data --}}
+    {{-- <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const kecamatanSelect = document.getElementById('kecamatanSelect');
+            const kelurahanSelect = document.getElementById('kelurahanSelect');
+            const contentWrapper = document.getElementById('content-wrapper');
+            const defaultMessage = document.getElementById('default-message');
+
+            var map = L.map('map').setView([-3.2993573601203274, 102.85836231521746], 13);
+            L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                maxZoom: 19,
+                attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+            }).addTo(map);
+
+            var kecamatanLayer = L.layerGroup().addTo(map);
+            var desaLayer = L.layerGroup().addTo(map);
+            var geojsonDesaLayer;
+
+            async function updateMap() {
+                const kecamatanVal = kecamatanSelect.value.toUpperCase();
+                const kelurahanVal = kelurahanSelect.value.toUpperCase();
+
+                kecamatanLayer.clearLayers();
+                desaLayer.clearLayers();
+
+                if (kecamatanVal && kelurahanVal) {
+                    try {
+                        const resKec = await fetch('wilayah/kec_1674.json');
+                        const dataKec = await resKec.json();
+                        const filteredKec = {
+                            type: "FeatureCollection",
+                            features: dataKec.features.filter(f => f.properties.nmkec.toUpperCase() ===
+                                kecamatanVal)
+                        };
+                        L.geoJSON(filteredKec, {
+                            style: {
+                                color: "red",
+                                weight: 2,
+                                fillOpacity: 0
+                            },
+                            onEachFeature: (feature, layer) => {
+                                layer.bindPopup("Kecamatan: " + feature.properties.nmkec);
+                            }
+                        }).addTo(kecamatanLayer);
+
+                        const resDesa = await fetch('wilayah/desa_1674.json');
+                        const dataDesa = await resDesa.json();
+                        const filteredDesa = {
+                            type: "FeatureCollection",
+                            features: dataDesa.features.filter(f =>
+                                f.properties.nmkec.toUpperCase() === kecamatanVal &&
+                                f.properties.nmdesa.toUpperCase() === kelurahanVal
+                            )
+                        };
+
+                        function getColor(nama) {
+                            let hash = 0;
+                            for (let i = 0; i < nama.length; i++) {
+                                hash = nama.charCodeAt(i) + ((hash << 5) - hash);
+                            }
+                            let color = '#';
+                            for (let i = 0; i < 3; i++) {
+                                let value = (hash >> (i * 8)) & 0xFF;
+                                color += ('00' + value.toString(16)).slice(-2);
+                            }
+                            return color;
+                        }
+
+                        geojsonDesaLayer = L.geoJSON(filteredDesa, {
+                            style: feature => ({
+                                color: getColor(feature.properties.nmdesa),
+                                weight: 1,
+                                fillOpacity: 0.4
+                            }),
+                            onEachFeature: (feature, layer) => {
+                                layer.bindPopup("<b>Kelurahan:</b> " + feature.properties.nmdesa +
+                                    "<br><b>Kecamatan:</b> " + feature.properties.nmkec);
+                            }
+                        }).addTo(desaLayer);
+
+                        // Panggil invalidateSize dulu
+                        map.invalidateSize();
+
+                        setTimeout(() => {
+                            if (filteredDesa.features.length > 0) {
+                                const bounds = geojsonDesaLayer.getBounds();
+                                if (bounds.isValid()) {
+                                    map.fitBounds(bounds, {
+                                        maxZoom: 15,
+                                        padding: [50, 50]
+                                    });
+                                }
+                            }
+                        }, 200); // kasih delay supaya peta ready
+
+                    } catch (err) {
+                        console.error('Error loading GeoJSON:', err);
+                    }
+                }
+            }
+
+            function updateDisplay() {
+                if (kecamatanSelect.value && kelurahanSelect.value) {
+                    contentWrapper.style.display = 'block';
+                    defaultMessage.style.display = 'none';
+                    setTimeout(updateMap, 150); // delay supaya container visible dulu
+                } else {
+                    contentWrapper.style.display = 'none';
+                    defaultMessage.style.display = 'block';
+                }
+            }
+
+            kecamatanSelect.addEventListener('change', () => {
+                kelurahanSelect.value = "";
+                updateDisplay();
+            });
+            kelurahanSelect.addEventListener('change', updateDisplay);
+
+            updateDisplay();
+        });
+    </script> --}}
     <script>
-        var map = L.map('map').setView([-3.2993573601203274, 102.85836231521746], 13);
-        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            maxZoom: 19,
-            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-        }).addTo(map);
-        var polygon = L.polygon([
-            [-3.2882817382767477, 102.85625088807906],
-            [-3.303483340230974, 102.86696338116147],
-            [-3.3021956841338524, 102.88090037048939],
-            [-3.2905709355354413, 102.87516793271953],
-        ]).addTo(map);
+        document.addEventListener('DOMContentLoaded', async function() {
+            const kecamatanSelect = document.getElementById('kecamatanSelect');
+            const kelurahanSelect = document.getElementById('kelurahanSelect');
+            const contentWrapper = document.getElementById('content-wrapper');
+            const defaultMessage = document.getElementById('default-message');
+
+            // Inisialisasi peta
+            const map = L.map('map').setView([-3.2993573601203274, 102.85836231521746], 13);
+            L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                maxZoom: 19,
+                attribution: '&copy; OpenStreetMap'
+            }).addTo(map);
+
+            const kecamatanLayer = L.layerGroup().addTo(map);
+            const desaLayer = L.layerGroup().addTo(map);
+
+            // Load data kecamatan dan desa
+            const [dataKecRes, dataDesaRes] = await Promise.all([
+                fetch('wilayah/kec_1674.json'),
+                fetch('wilayah/desa_1674.json')
+            ]);
+            const dataKecamatan = await dataKecRes.json();
+            const dataDesa = await dataDesaRes.json();
+
+            // Isi dropdown Kecamatan
+            const kecSet = new Set();
+            dataKecamatan.features.forEach(f => {
+                const name = f.properties.nmkec;
+                if (!kecSet.has(name)) {
+                    kecSet.add(name);
+                    const option = document.createElement('option');
+                    option.value = name;
+                    option.textContent = name;
+                    kecamatanSelect.appendChild(option);
+                }
+            });
+
+            // Fungsi untuk isi dropdown Kelurahan berdasarkan kecamatan yang dipilih
+            function populateKelurahan(kecamatanName) {
+                kelurahanSelect.innerHTML = '<option value="">-- Pilih Kelurahan --</option>';
+                kelurahanSelect.disabled = true;
+
+                const kelurahanSet = new Set();
+                dataDesa.features.forEach(f => {
+                    if (f.properties.nmkec === kecamatanName) {
+                        kelurahanSet.add(f.properties.nmdesa);
+                    }
+                });
+
+                kelurahanSet.forEach(name => {
+                    const option = document.createElement('option');
+                    option.value = name;
+                    option.textContent = name;
+                    kelurahanSelect.appendChild(option);
+                });
+
+                kelurahanSelect.disabled = kelurahanSet.size === 0;
+            }
+
+            function clearLayers() {
+                kecamatanLayer.clearLayers();
+                desaLayer.clearLayers();
+            }
+
+            async function updateMap() {
+                clearLayers();
+
+                const kecamatanVal = kecamatanSelect.value;
+                const kelurahanVal = kelurahanSelect.value;
+
+                if (!kecamatanVal || !kelurahanVal) return;
+
+                // Filter kecamatan dan tampilkan
+                const filteredKec = {
+                    type: "FeatureCollection",
+                    features: dataKecamatan.features.filter(f => f.properties.nmkec === kecamatanVal)
+                };
+                L.geoJSON(filteredKec, {
+                    style: {
+                        color: 'red',
+                        weight: 2,
+                        fillOpacity: 0
+                    },
+                    onEachFeature: (feature, layer) => {
+                        layer.bindPopup('Kecamatan: ' + feature.properties.nmkec);
+                    }
+                }).addTo(kecamatanLayer);
+
+                // Filter desa / kelurahan dan tampilkan
+                const filteredDesa = {
+                    type: "FeatureCollection",
+                    features: dataDesa.features.filter(f =>
+                        f.properties.nmkec === kecamatanVal && f.properties.nmdesa === kelurahanVal
+                    )
+                };
+
+                function getColor(nama) {
+                    let hash = 0;
+                    for (let i = 0; i < nama.length; i++) {
+                        hash = nama.charCodeAt(i) + ((hash << 5) - hash);
+                    }
+                    let color = '#';
+                    for (let i = 0; i < 3; i++) {
+                        let value = (hash >> (i * 8)) & 0xFF;
+                        color += ('00' + value.toString(16)).slice(-2);
+                    }
+                    return color;
+                }
+
+                L.geoJSON(filteredDesa, {
+                    style: feature => ({
+                        color: getColor(feature.properties.nmdesa),
+                        weight: 1,
+                        fillOpacity: 0.4
+                    }),
+                    onEachFeature: (feature, layer) => {
+                        layer.bindPopup(
+                            `<b>Kelurahan:</b> ${feature.properties.nmdesa}<br><b>Kecamatan:</b> ${feature.properties.nmkec}`
+                        );
+                    }
+                }).addTo(desaLayer);
+
+                map.invalidateSize();
+
+                setTimeout(() => {
+                    const bounds = L.geoJSON(filteredDesa).getBounds();
+                    if (bounds.isValid()) {
+                        map.fitBounds(bounds.pad(0.3), {
+                            maxZoom: 15
+                        });
+                    }
+                }, 200);
+            }
+
+            // Event change Kecamatan
+            kecamatanSelect.addEventListener('change', () => {
+                kelurahanSelect.value = '';
+                clearLayers();
+                if (kecamatanSelect.value) {
+                    populateKelurahan(kecamatanSelect.value);
+                    kelurahanSelect.disabled = false;
+                } else {
+                    kelurahanSelect.disabled = true;
+                }
+                updateUI();
+            });
+
+            // Event change Kelurahan
+            kelurahanSelect.addEventListener('change', () => {
+                updateUI();
+            });
+
+            function updateUI() {
+                if (kecamatanSelect.value && kelurahanSelect.value) {
+                    contentWrapper.style.display = 'block';
+                    defaultMessage.style.display = 'none';
+                    updateMap();
+                } else {
+                    contentWrapper.style.display = 'none';
+                    defaultMessage.style.display = 'block';
+                    clearLayers();
+                }
+            }
+
+            // Inisialisasi UI
+            kelurahanSelect.disabled = true;
+            updateUI();
+
+        });
     </script>
 
 </body>
