@@ -54,20 +54,24 @@
                 <!-- Logo deret: BPS, BERAKHLAK, Bangga Melayani Bangsa, Linggau -->
                 <div class="d-flex align-items-center me-3">
                     <img src="{{ asset('template/landingPage') }}/assets/img/bps.png" alt="Logo BPS"
-                        style="height: 60px; margin-right: 12px;" class="d-none d-md-block">
+                        style="height: 55px; margin-right: 12px;">
                     <img src="{{ asset('template/landingPage') }}/assets/img/logolinggau.png" alt="Logo Linggau"
-                        style="height: 60px; margin-right: 12px;" class="d-none d-md-block">
+                        style="height: 60px; margin-right: 12px;">
+                    <img src="{{ asset('template/landingPage') }}/assets/img/logojuara.png" alt="Logo Linggau"
+                        style="height: 60px; margin-right: 12px;">
 
-                    <img src="{{ asset('template/landingPage') }}/assets/img/logosebiduklinggau.png" alt="Logo BPS"
-                        style="height: 60px;">
+                    <img src="{{ asset('template/landingPage') }}/assets/img/logose.png" alt="Logo BPS"
+                        style="height: 55px;" class="d-none d-md-block">
+                    <img src="{{ asset('template/landingPage') }}/assets/img/satu-data-putih.png" alt="Logo BPS"
+                        style="height: 53px; margin-bottom: 12px;" class="d-none d-md-block">
                     <!-- Disembunyikan di tampilan mobile -->
                     <!-- Disembunyikan di tampilan mobile -->
                     <img src="{{ asset('template/landingPage') }}/assets/img/banggamelayanibangsa.png"
                         alt="Logo Bangga Melayani Bangsa" class="d-none d-md-block"
-                        style="height: 55px; width: auto; margin-right: 12px;">
+                        style="height: 50px; width: auto; margin-right: 12px;">
 
                     <img src="{{ asset('template/landingPage') }}/assets/img/berakhlak.png" alt="Logo BERAKHLAK"
-                        class="d-none d-md-block" style="height: 60px; margin-right: 12px;">
+                        class="d-none d-md-block" style="height: 55px; margin-right: 12px; margin-bottom: 12px;">
 
                 </div>
 
@@ -1048,16 +1052,20 @@
             const dataDesa = await dataDesaRes.json();
 
             // Isi dropdown Kecamatan
-            const kecSet = new Set();
-            dataKecamatan.features.forEach(f => {
-                const name = f.properties.nmkec;
-                if (!kecSet.has(name)) {
-                    kecSet.add(name);
-                    const option = document.createElement('option');
-                    option.value = name;
-                    option.textContent = name;
-                    kecamatanSelect.appendChild(option);
-                }
+            const sortedKecamatan = dataKecamatan.features
+                .map(f => ({
+                    kode: f.properties.kdkec,
+                    nama: f.properties.nmkec
+                }))
+                .filter((value, index, self) =>
+                    index === self.findIndex(v => v.nama === value.nama)) // hilangkan duplikat berdasarkan nama
+                .sort((a, b) => a.kode.localeCompare(b.kode)); // urut berdasarkan kdkec
+
+            sortedKecamatan.forEach(item => {
+                const option = document.createElement('option');
+                option.value = item.nama;
+                option.textContent = item.nama;
+                kecamatanSelect.appendChild(option);
             });
 
             // Fungsi untuk isi dropdown Kelurahan berdasarkan kecamatan yang dipilih
@@ -1065,22 +1073,26 @@
                 kelurahanSelect.innerHTML = '<option value="">-- Pilih Kelurahan --</option>';
                 kelurahanSelect.disabled = true;
 
-                const kelurahanSet = new Set();
-                dataDesa.features.forEach(f => {
-                    if (f.properties.nmkec === kecamatanName) {
-                        kelurahanSet.add(f.properties.nmdesa);
-                    }
-                });
+                const filteredKelurahan = dataDesa.features
+                    .filter(f => f.properties.nmkec === kecamatanName)
+                    .map(f => ({
+                        kode: f.properties.kddesa,
+                        nama: f.properties.nmdesa
+                    }))
+                    .filter((value, index, self) =>
+                        index === self.findIndex(v => v.nama === value.nama)) // hilangkan duplikat
+                    .sort((a, b) => a.kode.localeCompare(b.kode)); // urut berdasar kddesa
 
-                kelurahanSet.forEach(name => {
+                filteredKelurahan.forEach(item => {
                     const option = document.createElement('option');
-                    option.value = name;
-                    option.textContent = name;
+                    option.value = item.nama;
+                    option.textContent = item.nama;
                     kelurahanSelect.appendChild(option);
                 });
 
-                kelurahanSelect.disabled = kelurahanSet.size === 0;
+                kelurahanSelect.disabled = filteredKelurahan.length === 0;
             }
+
 
             function clearLayers() {
                 kecamatanLayer.clearLayers();

@@ -4,6 +4,11 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\Kecamatan;
+use App\Models\kelurahan;
+use App\Models\User;
+use Illuminate\Support\Str;
+
 
 class DatabaseSeeder extends Seeder
 {
@@ -14,11 +19,67 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
-
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        Kecamatan::insert(
+            [
+                [
+                    'id' => '1674011',
+                    'kecamatan' => 'Lubuk Linggau Barat I',
+                ],
+                [
+                    'id' => '1674',
+                    'kecamatan' => 'BPS Kota Lubuk Linggau',
+                ],
+                [
+                    'id' => '1674012',
+                    'kecamatan' => 'Lubuk Linggau Barat II',
+                ],
+                [
+                    'id' => '1674021',
+                    'kecamatan' => 'Lubuk Linggau Selatan I',
+                ],
+                [
+                    'id' => '1674022',
+                    'kecamatan' => 'Lubuk Linggau Selatan II',
+                ],
+                [
+                    'id' => '1674031',
+                    'kecamatan' => 'Lubuk Linggau Timur I',
+                ],
+                [
+                    'id' => '1674032',
+                    'kecamatan' => 'Lubuk Linggau Timur II',
+                ],
+                [
+                    'id' => '1674041',
+                    'kecamatan' => 'Lubuk Linggau Utara I',
+                ],
+                [
+                    'id' => '1674042',
+                    'kecamatan' => 'Lubuk Linggau Utara II',
+                ],
+            ]
+        );
+        kelurahan::insert(
+            [
+                [
+                    'id' => '1674021002',
+                    'kelurahan' => 'Perumnas Rahma',
+                    'kec_id' => '1674021'
+                ],
+            ]
+        );
+        User::insert(
+            [
+                [
+                    'id' => Str::uuid(),
+                    'name' => 'arya',
+                    'email' => 'aryasepta7901@gmail.com',
+                    'password' => '$2y$10$WUG9lH4DoK9Tkg..q.s6v.8R.8m7GPO65.H0by4CelzX05lAFWpve',
+                    'role' => 'cek',
+                    'kel_id' => '1674021002',
+                    'rt' => '01',
+                ],
+            ]
+        );
     }
 }

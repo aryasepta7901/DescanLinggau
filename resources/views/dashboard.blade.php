@@ -54,20 +54,24 @@
                 <!-- Logo deret: BPS, BERAKHLAK, Bangga Melayani Bangsa, Linggau -->
                 <div class="d-flex align-items-center me-3">
                     <img src="{{ asset('template/landingPage') }}/assets/img/bps.png" alt="Logo BPS"
-                        style="height: 60px; margin-right: 12px;" class="d-none d-md-block">
+                        style="height: 55px; margin-right: 12px;">
                     <img src="{{ asset('template/landingPage') }}/assets/img/logolinggau.png" alt="Logo Linggau"
-                        style="height: 60px; margin-right: 12px;" class="d-none d-md-block">
+                        style="height: 60px; margin-right: 12px;">
+                    <img src="{{ asset('template/landingPage') }}/assets/img/logojuara.png" alt="Logo Linggau"
+                        style="height: 60px; margin-right: 12px;">
 
-                    <img src="{{ asset('template/landingPage') }}/assets/img/logosebiduklinggau.png" alt="Logo BPS"
-                        style="height: 60px;">
+                    <img src="{{ asset('template/landingPage') }}/assets/img/logose.png" alt="Logo BPS"
+                        style="height: 55px;" class="d-none d-md-block">
+                    <img src="{{ asset('template/landingPage') }}/assets/img/satu-data-putih.png" alt="Logo BPS"
+                        style="height: 53px; margin-bottom: 12px;" class="d-none d-md-block">
                     <!-- Disembunyikan di tampilan mobile -->
                     <!-- Disembunyikan di tampilan mobile -->
                     <img src="{{ asset('template/landingPage') }}/assets/img/banggamelayanibangsa.png"
                         alt="Logo Bangga Melayani Bangsa" class="d-none d-md-block"
-                        style="height: 55px; width: auto; margin-right: 12px;">
+                        style="height: 50px; width: auto; margin-right: 12px;">
 
                     <img src="{{ asset('template/landingPage') }}/assets/img/berakhlak.png" alt="Logo BERAKHLAK"
-                        class="d-none d-md-block" style="height: 60px; margin-right: 12px;">
+                        class="d-none d-md-block" style="height: 55px; margin-right: 12px; margin-bottom: 12px;">
 
                 </div>
 
@@ -102,15 +106,19 @@
 
                     <!-- Teks tengah -->
                     <div class="heading-text text-center mx-3" style="flex: 1;">
-                        <h1>Dashboard Data Kelurahan</h1>
-                        <p>Pada halaman ini akan menampilkan data statistik kelurahan dengan isian tabel dan grafik yang
-                            menarik.</p>
+                        <img src="{{ asset('template/landingPage') }}/assets/img/logosebiduklinggau.png" width="350"
+                            class="img-fluid animated">
+                        <h1>SEBIDUK LINGGAU</h1>
+                        <h5>SATU BASIS DATA STATISTIK UNGGUL KELURAHAN LUBUK LINGGAU</h5>
+                        <small>Pada halaman ini akan menampilkan data statistik kelurahan dengan isian tabel dan grafik
+                            yang
+                            menarik.</small>
                     </div>
 
                     <!-- Gambar Wawakot -->
                     <img src="{{ asset('template/landingPage') }}/assets/img/wawakot.png" alt="Wakil Walikota"
                         class="wawakot-img img-fluid d-none d-md-block"
-                        width="250"style="margin-top: 50px; margin-right: 30px; margin-bottom: 0;">
+                        width="280"style="margin-top: 50px; margin-right: 30px; margin-bottom: 0;">
                 </div>
             </div>
 
@@ -158,6 +166,7 @@
                         <div id="dropdown-kecamatan" class="mb-2 d-none">
                             <label for="kecamatanSelect" class="form-label">Pilih Kecamatan</label>
                             <select class="form-select" id="kecamatanSelect">
+                                <option value="">--Pilih Kecamatan--</option>
                                 {{-- <option value="LUBUK LINGGAU BARAT I">LUBUK LINGGAU BARAT I</option>
                                 <option value="LUBUK LINGGAU BARAT Ii">LUBUK LINGGAU BARAT II</option>
                                 <option value="LUBUK LINGGAU SELATAN I">LUBUK LINGGAU SELATAN I</option>
@@ -216,7 +225,7 @@
                         </div>
 
                         <!-- Input Pencarian (Opsional) -->
-                        <input type="text" class="form-control mb-2" placeholder="Cari indikator"
+                        <input type="text" class="form-control mb-2 " placeholder="Cari indikator..."
                             id="searchInput">
                         <div id="indikator-wrapper">
 
@@ -226,9 +235,9 @@
                                     <button class="list-group-item list-group-item-action btn-sm"
                                         data-target="jenis-kelamin">Jenis Kelamin</button>
                                     <button class="list-group-item list-group-item-action btn-sm"
-                                        data-target="usia">Usia</button>
-                                    <button class="list-group-item list-group-item-action btn-sm"
                                         data-target="status-perkawinan">Status Perkawinan</button>
+                                    <button class="list-group-item list-group-item-action btn-sm"
+                                        data-target="usia">Usia</button>
                                     <button class="list-group-item list-group-item-action btn-sm"
                                         data-target="agama">Agama</button>
                                     <button class="list-group-item list-group-item-action btn-sm"
@@ -357,132 +366,142 @@
 
                         <!-- Konten Jenis Kelamin -->
                         <div id="konten-jenis-kelamin" class="indikator-konten d-none">
-                            <div style="height:300px" id="map" class="col-lg-10 mx-auto mb-3">
+                            <div style="height:300px" id="map1" class="col-lg-10 mx-auto mb-3">
 
                             </div>
                             <div class="chart-container">
                                 <h5>Grafik Jumlah Penduduk Menurut Jenis Kelamin di Kelurahan Sidorejo
                                 </h5>
-                                <div id="chart" class="card-body">
+                                <div id="PieChartJK" class="card-body">
+                                    <!-- Tempatkan chart di sini -->
+                                </div>
+                            </div>
+                            <div class="chart-container">
+                                <h5>Grafik Jumlah Penduduk Menurut Jenis Kelamin di Kelurahan Sidorejo per RT
+                                </h5>
+                                <div id="BarChartJK" class="card-body">
                                     <!-- Tempatkan chart di sini -->
                                 </div>
                             </div>
 
                             <div class="chart-container">
-                                <h5 class="mt-4">Jumlah Penduduk Menurut Jenis Kelamin di Kelurahan Sidorejo</h5>
-                                <table class="table table-bordered table-responsive mt-3 text-center">
-                                    <thead>
-                                        <tr>
-                                            <th rowspan="2" class="text-center">RT</th>
-                                            <th colspan="2">Jenis Kelamin</th>
-                                            <th rowspan="2">Jumlah</th>
-                                            <th rowspan="2">Rasio L/P</th>
-                                        </tr>
-                                        <tr>
-                                            <th>Laki-laki</th>
-                                            <th>Perempuan</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>RT 1</td>
-                                            <td>125</td>
-                                            <td>123</td>
-                                            <td>248</td>
-                                            <td>101.63</td>
-                                        </tr>
-                                        <tr>
-                                            <td>RT 2</td>
-                                            <td>120</td>
-                                            <td>130</td>
-                                            <td>250</td>
-                                            <td>92.31</td>
-                                        </tr>
-                                        <tr>
-                                            <td>RT 3</td>
-                                            <td>231</td>
-                                            <td>171</td>
-                                            <td>402</td>
-                                            <td>135.09</td>
-                                        </tr>
-                                        <tr>
-                                            <td>RT 4</td>
-                                            <td>119</td>
-                                            <td>108</td>
-                                            <td>227</td>
-                                            <td>110.19</td>
-                                        </tr>
-                                        <tr>
-                                            <td>RT 5</td>
-                                            <td>71</td>
-                                            <td>73</td>
-                                            <td>144</td>
-                                            <td>97.26</td>
-                                        </tr>
-                                        <tr>
-                                            <td>RT 6</td>
-                                            <td>154</td>
-                                            <td>154</td>
-                                            <td>308</td>
-                                            <td>100.00</td>
-                                        </tr>
-                                        <tr>
-                                            <td>RT 7</td>
-                                            <td>147</td>
-                                            <td>145</td>
-                                            <td>292</td>
-                                            <td>101.38</td>
-                                        </tr>
-                                        <tr>
-                                            <td>RT 8</td>
-                                            <td>168</td>
-                                            <td>153</td>
-                                            <td>321</td>
-                                            <td>109.80</td>
-                                        </tr>
-                                        <tr>
-                                            <td>RT 9</td>
-                                            <td>129</td>
-                                            <td>121</td>
-                                            <td>250</td>
-                                            <td>106.61</td>
-                                        </tr>
-                                        <tr>
-                                            <td>RT 10</td>
-                                            <td>162</td>
-                                            <td>148</td>
-                                            <td>310</td>
-                                            <td>109.46</td>
-                                        </tr>
-                                        <tr>
-                                            <td>RT 11</td>
-                                            <td>157</td>
-                                            <td>225</td>
-                                            <td>382</td>
-                                            <td>69.78</td>
-                                        </tr>
-                                        <tr>
-                                            <td>RT 12</td>
-                                            <td>135</td>
-                                            <td>126</td>
-                                            <td>261</td>
-                                            <td>107.14</td>
-                                        </tr>
-                                        <tr>
-                                            <td><strong>Kelurahan SIDOREJO</strong></td>
-                                            <td><strong>1748</strong></td>
-                                            <td><strong>1707</strong></td>
-                                            <td><strong>3455</strong></td>
-                                            <td><strong>102.40</strong></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                                <h5 class="mt-4">Jumlah Penduduk Menurut Status Perkawinan di Kelurahan Sidorejo</h5>
+                                <div class="table-responsive mt-3">
+                                    <table class="table table-bordered text-center">
+                                        <thead>
+                                            <tr>
+                                                <th rowspan="2" class="text-center">RT</th>
+                                                <th colspan="2">Jenis Kelamin</th>
+                                                <th rowspan="2">Jumlah</th>
+                                                <th rowspan="2">Rasio L/P</th>
+                                            </tr>
+                                            <tr>
+                                                <th>Laki-laki</th>
+                                                <th>Perempuan</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>RT 1</td>
+                                                <td>125</td>
+                                                <td>123</td>
+                                                <td>248</td>
+                                                <td>101.63</td>
+                                            </tr>
+                                            <tr>
+                                                <td>RT 2</td>
+                                                <td>120</td>
+                                                <td>130</td>
+                                                <td>250</td>
+                                                <td>92.31</td>
+                                            </tr>
+                                            <tr>
+                                                <td>RT 3</td>
+                                                <td>231</td>
+                                                <td>171</td>
+                                                <td>402</td>
+                                                <td>135.09</td>
+                                            </tr>
+                                            <tr>
+                                                <td>RT 4</td>
+                                                <td>119</td>
+                                                <td>108</td>
+                                                <td>227</td>
+                                                <td>110.19</td>
+                                            </tr>
+                                            <tr>
+                                                <td>RT 5</td>
+                                                <td>71</td>
+                                                <td>73</td>
+                                                <td>144</td>
+                                                <td>97.26</td>
+                                            </tr>
+                                            <tr>
+                                                <td>RT 6</td>
+                                                <td>154</td>
+                                                <td>154</td>
+                                                <td>308</td>
+                                                <td>100.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td>RT 7</td>
+                                                <td>147</td>
+                                                <td>145</td>
+                                                <td>292</td>
+                                                <td>101.38</td>
+                                            </tr>
+                                            <tr>
+                                                <td>RT 8</td>
+                                                <td>168</td>
+                                                <td>153</td>
+                                                <td>321</td>
+                                                <td>109.80</td>
+                                            </tr>
+                                            <tr>
+                                                <td>RT 9</td>
+                                                <td>129</td>
+                                                <td>121</td>
+                                                <td>250</td>
+                                                <td>106.61</td>
+                                            </tr>
+                                            <tr>
+                                                <td>RT 10</td>
+                                                <td>162</td>
+                                                <td>148</td>
+                                                <td>310</td>
+                                                <td>109.46</td>
+                                            </tr>
+                                            <tr>
+                                                <td>RT 11</td>
+                                                <td>157</td>
+                                                <td>225</td>
+                                                <td>382</td>
+                                                <td>69.78</td>
+                                            </tr>
+                                            <tr>
+                                                <td>RT 12</td>
+                                                <td>135</td>
+                                                <td>126</td>
+                                                <td>261</td>
+                                                <td>107.14</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Kelurahan SIDOREJO</strong></td>
+                                                <td><strong>1748</strong></td>
+                                                <td><strong>1707</strong></td>
+                                                <td><strong>3455</strong></td>
+                                                <td><strong>102.40</strong></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
 
                             </div>
                         </div>
 
                         <!-- Konten Usia -->
-                        <div id="konten-usia" class="indikator-konten d-none">
+                        {{-- <div id="konten-usia" class="indikator-konten d-none">
                             <div class="chart-container">
                                 <h5>Grafik Jumlah Penduduk Menurut Kecamatan dan Kelompok Usia di Kota Lubuk Linggau
                                 </h5>
@@ -545,8 +564,129 @@
                                 </table>
 
                             </div>
-                        </div>
+                        </div> --}}
 
+                        {{-- Konten Status Perkawinan --}}
+                        <div id="konten-status-perkawinan" class="indikator-konten d-none">
+                            <div style="height:300px" id="map2" class="col-lg-10 mx-auto mb-3">
+
+                            </div>
+                            <div class="chart-container">
+                                <h5>Grafik Jumlah Penduduk Menurut Status Perkawinan di Kelurahan Sidorejo
+                                </h5>
+                                <div id="PieChartSP" class="card-body">
+                                    <!-- Tempatkan chart di sini -->
+                                </div>
+                            </div>
+                            <div class="chart-container">
+                                <h5>Grafik Jumlah Penduduk Menurut Status Perkawinan di Kelurahan Sidorejo per RT
+                                </h5>
+                                <div id="BarChartSP" class="card-body">
+                                    <!-- Tempatkan chart di sini -->
+                                </div>
+                            </div>
+
+                            <div class="chart-container">
+                                <h5 class="mt-4">Jumlah Penduduk Menurut Status Perkawinan di Kelurahan Sidorejo</h5>
+                                <div class="table-responsive mt-3">
+                                    <table class="table table-bordered text-center">
+                                        <thead>
+                                            <tr>
+                                                <th rowspan="2">RT</th>
+                                                <th colspan="3">Status Perkawinan (%)</th>
+                                            </tr>
+                                            <tr>
+                                                <th>Belum Kawin</th>
+                                                <th>Kawin</th>
+                                                <th>Cerai</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>RT 1</td>
+                                                <td>34</td>
+                                                <td>55.37</td>
+                                                <td>8.12</td>
+                                            </tr>
+                                            <tr>
+                                                <td>RT 2</td>
+                                                <td>39.3</td>
+                                                <td>55.2</td>
+                                                <td>7.86</td>
+                                            </tr>
+                                            <tr>
+                                                <td>RT 3</td>
+                                                <td>36.65</td>
+                                                <td>55.54</td>
+                                                <td>6</td>
+                                            </tr>
+                                            <tr>
+                                                <td>RT 4</td>
+                                                <td>35.30</td>
+                                                <td>53.89</td>
+                                                <td>7.54</td>
+                                            </tr>
+                                            <tr>
+                                                <td>RT 5</td>
+                                                <td>36.65</td>
+                                                <td>56.85</td>
+                                                <td>8</td>
+                                            </tr>
+                                            <tr>
+                                                <td>RT 6</td>
+                                                <td>38</td>
+                                                <td>55.92</td>
+                                                <td>7.99</td>
+                                            </tr>
+                                            <tr>
+                                                <td>RT 7</td>
+                                                <td>35.2</td>
+                                                <td>56.1</td>
+                                                <td>9.98</td>
+                                            </tr>
+                                            <tr>
+                                                <td>RT 8</td>
+                                                <td>38.1</td>
+                                                <td>54.64</td>
+                                                <td>7.98</td>
+                                            </tr>
+                                            <tr>
+                                                <td>RT 9</td>
+                                                <td>35</td>
+                                                <td>54.82</td>
+                                                <td>7.65</td>
+                                            </tr>
+                                            <tr>
+                                                <td>RT 10</td>
+                                                <td>38.3</td>
+                                                <td>55.37</td>
+                                                <td>8.33</td>
+                                            </tr>
+                                            <tr>
+                                                <td>RT 11</td>
+                                                <td>35</td>
+                                                <td>57.23</td>
+                                                <td>7.99</td>
+                                            </tr>
+                                            <tr>
+                                                <td>RT 12</td>
+                                                <td>38.3</td>
+                                                <td>53.51</td>
+                                                <td>8.44</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Kelurahan SIDOREJO</strong></td>
+                                                <td><strong>36.65</strong></td>
+                                                <td><strong>55.37</strong></td>
+                                                <td><strong>7.99</strong></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+
+                        </div>
                     </div>
 
                 </div>
@@ -580,11 +720,12 @@
                 <div class="col-lg-4 col-md-12 footer-links">
                     <h4>Layanan Kami</h4>
                     <ul>
-                        <li><a href="#">Website BPS Kota Lubuk Linggau</a></li>
-                        <li><a href="#">Pelayanan Statistik Terpadu Digital</a></li>
-                        <li><a href="#">Rekomendasi Statistik</a></li>
-                        <li><a href="#">Indah HUB</a></li>
-                        <li><a href="#">xxx</a></li>
+                        <li><a href="https://lubuklinggaukota.bps.go.id/" target="_blank">Website BPS Kota Lubuk
+                                Linggau</a></li>
+                        <li><a href="https://pst.bps.go.id/" target="_blank">Pelayanan Statistik Terpadu Digital</a>
+                        </li>
+                        <li><a href="https://romantik.web.bps.go.id/" target="_blank">Rekomendasi Statistik</a></li>
+                        <li><a href="https://indah.bps.go.id/" target="_blank">Indonesia Data HUB</a></li>
                     </ul>
                 </div>
 
@@ -627,7 +768,60 @@
         new TypeIt("#myElement", {}).go();
     </script>
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    {{-- Jenis Kelamin --}}
+    <script>
+        var options = {
+            series: [1718, 1677],
+            chart: {
+                type: 'pie',
+                height: 350,
+                width: '100%',
+                toolbar: {
+                    show: true, // Tampilkan toolbar
+                    tools: {
+                        download: true, // Aktifkan tombol download
+                    }
+                },
+            },
+            labels: [
+                'Laki-Laki',
+                'Perempuan',
+            ],
+            legend: {
+                position: 'bottom' // Letakkan legend di bawah
+            },
 
+            responsive: [{
+                    breakpoint: 768,
+                    options: {
+                        chart: {
+                            height: 280,
+                            width: '100%'
+                        },
+                        legend: {
+                            position: 'bottom'
+                        }
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    options: {
+                        chart: {
+                            height: 220,
+                            width: '100%'
+                        },
+                        legend: {
+                            position: 'bottom'
+                        }
+                    }
+                }
+            ]
+        };
+
+
+        var chart = new ApexCharts(document.querySelector("#PieChartJK"), options);
+        chart.render();
+    </script>
     <script>
         var options = {
             series: [{
@@ -659,7 +853,7 @@
             },
             xaxis: {
                 categories: ['RT 01', 'RT 02', 'RT 03', 'RT 04', 'RT 05', 'RT 06', 'RT 07', 'RT 08', 'RT 09', 'RT 10',
-                    'RT 11'
+                    'RT 11', 'RT 12'
                 ],
             },
             // yaxis: {
@@ -673,16 +867,130 @@
             tooltip: {
                 y: {
                     formatter: function(val) {
-                        return "$ " + val + " thousands"
+                        return "" + val + " Jiwa"
                     }
                 }
             }
         };
 
-        var chart = new ApexCharts(document.querySelector("#chart"), options);
+        var chart = new ApexCharts(document.querySelector("#BarChartJK"), options);
+        chart.render();
+    </script>
+    {{-- Status Perkawinan --}}
+    <script>
+        var options = {
+            series: [36.65, 55.37, 7.99],
+            chart: {
+                type: 'pie',
+                height: 350,
+                width: '100%',
+                toolbar: {
+                    show: true, // Tampilkan toolbar
+                    tools: {
+                        download: true, // Aktifkan tombol download
+                    }
+                },
+            },
+            labels: [
+                'Belum Kawin',
+                'Kawin',
+                'Cerai',
+            ],
+            legend: {
+                position: 'bottom' // Letakkan legend di bawah
+            },
+            responsive: [{
+                    breakpoint: 768,
+                    options: {
+                        chart: {
+                            height: 280,
+                            width: '100%'
+                        },
+                        legend: {
+                            position: 'bottom'
+                        }
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    options: {
+                        chart: {
+                            height: 220,
+                            width: '100%'
+                        },
+                        legend: {
+                            position: 'bottom'
+                        }
+                    }
+                }
+            ]
+        };
+
+
+        var chart = new ApexCharts(document.querySelector("#PieChartSP"), options);
         chart.render();
     </script>
     <script>
+        var options = {
+            series: [{
+                    name: 'Belum Kawin',
+                    data: [34, 39.3, 36.65, 35.30, 36.65, 38, 35.2, 38.1, 35, 38.3, 35, 38.3]
+                }, {
+                    name: 'Kawin',
+                    data: [55.37, 55.2, 55.54, 53.89, 56.85, 55.92, 56.1, 54.64, 54.82, 55.37, 57.23, 53.51]
+                },
+                {
+                    name: 'Cerai',
+                    data: [8.12, 7.86, 6, 7.54, 8, 7.99, 9.98, 7.98, 7.65, 8.33, 7.99, 8.44]
+                }
+            ],
+            chart: {
+                type: 'bar',
+                height: 350
+            },
+
+            plotOptions: {
+                bar: {
+                    horizontal: false,
+                    columnWidth: '55%',
+                    borderRadius: 5,
+                    borderRadiusApplication: 'end'
+                },
+            },
+            dataLabels: {
+                enabled: false
+            },
+            stroke: {
+                show: true,
+                width: 2,
+                colors: ['transparent']
+            },
+            xaxis: {
+                categories: ['RT 01', 'RT 02', 'RT 03', 'RT 04', 'RT 05', 'RT 06', 'RT 07', 'RT 08', 'RT 09', 'RT 10',
+                    'RT 11', 'RT 12'
+                ],
+            },
+            // yaxis: {
+            //     title: {
+            //         text: '$ (thousands)'
+            //     }
+            // },
+            fill: {
+                opacity: 1
+            },
+            tooltip: {
+                y: {
+                    formatter: function(val) {
+                        return " " + val + " Persen"
+                    }
+                }
+            }
+        };
+
+        var chart = new ApexCharts(document.querySelector("#BarChartSP"), options);
+        chart.render();
+    </script>
+    {{-- <script>
         var options = {
             series: [{
                     name: 'Males',
@@ -762,25 +1070,30 @@
 
         var chart = new ApexCharts(document.querySelector("#piramidachart"), options);
         chart.render();
-    </script>
-
+    </script> --}}
 
     <script>
         document.addEventListener('DOMContentLoaded', async function() {
-            // Inisialisasi peta global
-            window.map = L.map('map').setView([-3.2993573601203274, 102.85836231521746], 12);
-            L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            const map1 = L.map('map1').setView([-3.2993573601203274, 102.85836231521746], 12);
+            const map2 = L.map('map2').setView([-3.2993573601203274, 102.85836231521746], 12);
+
+            const tileLayerUrl = 'https://tile.openstreetmap.org/{z}/{x}/{y}.png';
+            const tileLayerOptions = {
                 maxZoom: 19,
                 attribution: '&copy; OpenStreetMap',
-            }).addTo(window.map);
+            };
+
+            L.tileLayer(tileLayerUrl, tileLayerOptions).addTo(map1);
+            L.tileLayer(tileLayerUrl, tileLayerOptions).addTo(map2);
 
             const kecamatanSelect = document.getElementById('kecamatanSelect');
             const kelurahanSelect = document.getElementById('kelurahanSelect');
 
-            const kecamatanLayer = L.layerGroup().addTo(window.map);
-            const desaLayer = L.layerGroup().addTo(window.map);
+            const kecamatanLayerMap1 = L.layerGroup().addTo(map1);
+            const desaLayerMap1 = L.layerGroup().addTo(map1);
+            const kecamatanLayerMap2 = L.layerGroup().addTo(map2);
+            const desaLayerMap2 = L.layerGroup().addTo(map2);
 
-            // Load GeoJSON
             const [resKec, resDesa] = await Promise.all([
                 fetch('wilayah/kec_1674.json'),
                 fetch('wilayah/desa_1674.json'),
@@ -788,43 +1101,54 @@
             const dataKecamatan = await resKec.json();
             const dataDesa = await resDesa.json();
 
-            // Isi dropdown kecamatan
-            const kecSet = new Set();
-            dataKecamatan.features.forEach(f => {
-                const name = f.properties.nmkec;
-                if (!kecSet.has(name)) {
-                    kecSet.add(name);
-                    const option = document.createElement('option');
-                    option.value = name;
-                    option.textContent = name;
-                    kecamatanSelect.appendChild(option);
-                }
+            const sortedKecamatan = dataKecamatan.features
+                .map(f => ({
+                    kode: f.properties.kdkec,
+                    nama: f.properties.nmkec
+                }))
+                .filter((value, index, self) =>
+                    index === self.findIndex(v => v.nama === value.nama))
+                .sort((a, b) => a.kode.localeCompare(b.kode));
+
+            sortedKecamatan.forEach(item => {
+                const option = document.createElement('option');
+                option.value = item.nama;
+                option.textContent = item.nama;
+                kecamatanSelect.appendChild(option);
             });
 
             function populateKelurahan(kecamatanName) {
                 kelurahanSelect.innerHTML = '<option value="">-- Pilih Kelurahan --</option>';
                 kelurahanSelect.disabled = true;
 
-                const kelSet = new Set();
-                dataDesa.features.forEach(f => {
-                    if (f.properties.nmkec === kecamatanName) {
-                        kelSet.add(f.properties.nmdesa);
-                    }
-                });
+                const filteredKelurahan = dataDesa.features
+                    .filter(f => f.properties.nmkec === kecamatanName)
+                    .map(f => ({
+                        kode: f.properties.kddesa,
+                        nama: f.properties.nmdesa
+                    }))
+                    .filter((value, index, self) =>
+                        index === self.findIndex(v => v.nama === value.nama))
+                    .sort((a, b) => a.kode.localeCompare(b.kode));
 
-                kelSet.forEach(name => {
+                filteredKelurahan.forEach(item => {
                     const option = document.createElement('option');
-                    option.value = name;
-                    option.textContent = name;
+                    option.value = item.nama;
+                    option.textContent = item.nama;
                     kelurahanSelect.appendChild(option);
                 });
 
-                kelurahanSelect.disabled = kelSet.size === 0;
+                kelurahanSelect.disabled = filteredKelurahan.length === 0;
             }
 
-            function clearLayers() {
-                kecamatanLayer.clearLayers();
-                desaLayer.clearLayers();
+            function clearLayers(map) {
+                if (map === map1) {
+                    kecamatanLayerMap1.clearLayers();
+                    desaLayerMap1.clearLayers();
+                } else if (map === map2) {
+                    kecamatanLayerMap2.clearLayers();
+                    desaLayerMap2.clearLayers();
+                }
             }
 
             function getColor(name) {
@@ -840,37 +1164,36 @@
                 return color;
             }
 
-            function updateMap() {
-                clearLayers();
+            function updateMap(map) {
+                clearLayers(map);
 
                 const kecamatanVal = kecamatanSelect.value;
                 const kelurahanVal = kelurahanSelect.value;
 
                 if (!kecamatanVal || !kelurahanVal) return;
 
-                // Tambahkan boundary kecamatan
                 const filteredKec = {
                     type: 'FeatureCollection',
                     features: dataKecamatan.features.filter(f => f.properties.nmkec === kecamatanVal),
                 };
-                const kecLayer = L.geoJSON(filteredKec, {
-                    style: {
-                        color: 'red',
-                        weight: 2,
-                        fillOpacity: 0,
-                    },
-                    onEachFeature: (feature, layer) => {
-                        layer.bindPopup('Kecamatan: ' + feature.properties.nmkec);
-                    },
-                }).addTo(kecamatanLayer);
-
-                // Tambahkan kelurahan
                 const filteredDesa = {
                     type: 'FeatureCollection',
                     features: dataDesa.features.filter(
                         f => f.properties.nmkec === kecamatanVal && f.properties.nmdesa === kelurahanVal
                     ),
                 };
+
+                const kecLayer = L.geoJSON(filteredKec, {
+                    style: {
+                        color: 'red',
+                        weight: 2,
+                        fillOpacity: 0
+                    },
+                    onEachFeature: (feature, layer) => {
+                        layer.bindPopup('Kecamatan: ' + feature.properties.nmkec);
+                    },
+                });
+
                 const desaGeoLayer = L.geoJSON(filteredDesa, {
                     style: feature => ({
                         color: getColor(feature.properties.nmdesa),
@@ -882,37 +1205,45 @@
                             `<b>Kelurahan:</b> ${feature.properties.nmdesa}<br><b>Kecamatan:</b> ${feature.properties.nmkec}`
                         );
                     },
-                }).addTo(desaLayer);
+                });
 
-                // Pastikan map resize
-                window.map.invalidateSize();
+                if (map === map1) {
+                    kecLayer.addTo(kecamatanLayerMap1);
+                    desaGeoLayer.addTo(desaLayerMap1);
+                } else if (map === map2) {
+                    kecLayer.addTo(kecamatanLayerMap2);
+                    desaGeoLayer.addTo(desaLayerMap2);
+                }
 
-                // Zoom dan scroll ke lokasi kelurahan
-                // setTimeout(() => {
-                //     const bounds = desaGeoLayer.getBounds();
+                map.invalidateSize();
 
-                //     if (!bounds.isValid()) {
-                //         window.map.setView([-3.2993573601203274, 102.85836231521746], 13);
-                //         return;
-                //     }
-
-                //     map.fitBounds(bounds.pad(0.3), {
-                //         maxZoom: 15
-                //     });
-                // }, 200);
+                const bounds = desaGeoLayer.getBounds();
+                if (bounds.isValid()) {
+                    map.fitBounds(bounds.pad(0.3), {
+                        maxZoom: 15
+                    });
+                } else {
+                    map.setView([-3.2993573601203274, 102.85836231521746], 13);
+                }
             }
 
             function updateUI() {
-                if (kecamatanSelect.value && kelurahanSelect.value) {
-                    updateMap();
+                const kecamatanVal = kecamatanSelect.value;
+                const kelurahanVal = kelurahanSelect.value;
+
+                if (kecamatanVal && kelurahanVal) {
+                    updateMap(map1);
+                    updateMap(map2);
                 } else {
-                    clearLayers();
+                    clearLayers(map1);
+                    clearLayers(map2);
                 }
             }
 
             kecamatanSelect.addEventListener('change', () => {
                 kelurahanSelect.value = '';
-                clearLayers();
+                clearLayers(map1);
+                clearLayers(map2);
 
                 if (kecamatanSelect.value) {
                     populateKelurahan(kecamatanSelect.value);
@@ -926,43 +1257,41 @@
 
             kelurahanSelect.addEventListener('change', updateUI);
 
-            // Inisialisasi
             kelurahanSelect.disabled = true;
-            clearLayers();
-        });
-    </script>
+            clearLayers(map1);
+            clearLayers(map2);
 
+            // Global untuk aktivasi indikator
+            window.activateIndicator = function(target) {
+                document.querySelectorAll('.indicator-list .list-group-item').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                const activeButton = document.querySelector(
+                    `.indicator-list .list-group-item[data-target="${target}"]`);
+                if (activeButton) activeButton.classList.add('active');
 
-    <script>
-        function activateIndicator(target) {
-            document.querySelectorAll('.indicator-list .list-group-item').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            const activeButton = document.querySelector(`.indicator-list .list-group-item[data-target="${target}"]`);
-            if (activeButton) activeButton.classList.add('active');
+                document.querySelectorAll('.indikator-konten').forEach(content => {
+                    content.classList.add('d-none');
+                });
+                const selectedContent = document.getElementById(`konten-${target}`);
+                if (selectedContent) selectedContent.classList.remove('d-none');
 
-            document.querySelectorAll('.indikator-konten').forEach(content => {
-                content.classList.add('d-none');
-            });
-            const selectedContent = document.getElementById(`konten-${target}`);
-            if (selectedContent) selectedContent.classList.remove('d-none');
+                const kecamatanVal = kecamatanSelect.value;
+                const kelurahanVal = kelurahanSelect.value;
 
-            // Invalidate size peta saat konten berubah, beri delay agar peta sudah visible
-            if (window.map) {
-                setTimeout(() => {
-                    window.map.invalidateSize();
-                }, 300);
-            }
-        }
+                if (kecamatanVal && kelurahanVal) {
+                    setTimeout(() => {
+                        updateMap(map1);
+                        updateMap(map2);
+                    }, 300);
+                }
+            };
 
-        document.addEventListener('DOMContentLoaded', () => {
             const savedIndicator = sessionStorage.getItem('activeIndicator');
-
-            // Deteksi reload halaman (refresh)
             const navEntries = performance.getEntriesByType('navigation');
             const isReload = navEntries.length > 0 && navEntries[0].type === 'reload';
 
-            if (isReload && savedIndicator) {
+            if (isReload && savedIndicator && kecamatanSelect.value && kelurahanSelect.value) {
                 activateIndicator(savedIndicator);
             } else {
                 activateIndicator('default');
@@ -984,9 +1313,12 @@
 
 
 
+
+
+
     <!-- Script Cari Indikator -->
     <script>
-        document.querySelector('input[placeholder="Cari indikator"]').addEventListener('input', function() {
+        document.querySelector('input[placeholder="Cari indikator..."]').addEventListener('input', function() {
             const keyword = this.value.toLowerCase();
             const items = document.querySelectorAll('.indicator-list .list-group-item');
             items.forEach(item => {

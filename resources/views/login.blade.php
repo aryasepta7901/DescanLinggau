@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>AdminLTE 3 | Log in (v2)</title>
+    <title>Sebiduk Linggau| Log in </title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
@@ -25,10 +25,36 @@
                 <a href="/" class="h1"><b>SEBIDUK </b>LINGGAU</a>
             </div>
             <div class="card-body">
+                @if ($errors->any())
+                    <div class="alert alert-danger alert-dismissible">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                        <h5><i class="icon fas fa-ban"></i> Ada Kesalahan</h5>
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li> {{ $error }}</li>
+                            @endforeach
+                        </ul>
 
-                <form action="{{ asset('template/backend') }}/index3.html" method="post">
+                    </div>
+                @endif
+                @if (session()->has('loginError'))
+                    <div class="alert alert-danger alert-dismissible">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                        <h5><i class="icon fas fa-check"></i> Gagal!</h5>
+                        {{ session('loginError') }}
+                    </div>
+                @endif
+                @if (session()->has('success'))
+                    <div class="alert alert-info alert-dismissible">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                        <h5><i class="icon fas fa-info"></i> Info!</h5>
+                        {{ session('success') }}
+                    </div>
+                @endif
+                <form action="{{ url('/login') }}" method="post">
+                    @csrf
                     <div class="input-group mb-3">
-                        <input type="email" class="form-control" placeholder="Email">
+                        <input name="email" type="email" class="form-control" placeholder="Email">
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-envelope"></span>
@@ -36,7 +62,7 @@
                         </div>
                     </div>
                     <div class="input-group mb-3">
-                        <input type="password" class="form-control" placeholder="Password">
+                        <input name="password" type="password" class="form-control" placeholder="Password">
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-lock"></span>
