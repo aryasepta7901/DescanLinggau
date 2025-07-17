@@ -73,7 +73,6 @@ return new class extends Migration
 
             // Foreign key (pastikan tipe sama persis)
             $table->foreign('r101')->references('id')->on('kelurahan')->onDelete('cascade');
-            $table->foreign('r301d')->references('id')->on('kbli')->onDelete('cascade');
         });
     }
 

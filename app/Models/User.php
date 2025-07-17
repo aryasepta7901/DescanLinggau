@@ -41,8 +41,10 @@ class User extends Authenticatable
      * @var array<string, string>
      */
     protected $casts = [
-        'email_verified_at' => 'datetime',
+        'id' => 'string',
+
     ];
+
     public function kelurahan()
     {
         return $this->belongsTo(kelurahan::class, 'kel_id');

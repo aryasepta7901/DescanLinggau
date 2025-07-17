@@ -124,7 +124,7 @@ class EntryUMKMController extends Controller
                 'r104' => 'required',
                 // Blok II
                 'r201a' => 'required|string|max:255',
-                'r201b' => 'required|string|digits:16',
+                'r201b' => 'required',
                 'r201c' => 'required|in:1,2',
                 'r201d' => 'required|integer|min:0',
                 'r201e' => 'required|string|max:20',
@@ -137,12 +137,12 @@ class EntryUMKMController extends Controller
                 'r301d' => 'required|string|max:10',
                 'r302' => 'required|in:1,2,3,4,5',
                 'r303' => 'required|in:1,2',
-                'r304' => 'required|array',
+                'r304' => 'array',
                 'r305' => Rule::requiredIf(function () use ($request) {
                     return in_array('1', (array)$request->r304);
                 }),
-                'r306' => 'required|array',
-                'r307' => 'required|array',
+                'r306' => 'array',
+                'r307' => 'array',
                 'r308' => 'required|array',
 
                 // Pekerja
@@ -216,75 +216,75 @@ class EntryUMKMController extends Controller
                     ->withInput();
             }
 
-            EntryUMKM::updateOrCreate(
-                ['id' => $id],
-                ['status' => 2],
-            ); // kondisi pencarian berdasarkan ID
+            // Simpan data
+            $this->saveEntryUmkm($request, $id, 2); // status 2 = clean
             return redirect('/EntryUMKM')->with('success', 'Data Clean/Bersih');
         }
 
         if ($action === 'save') {
-            EntryUMKM::updateOrCreate(
-                ['id' => $id], // kondisi pencarian berdasarkan ID
-                [
-                    // Blok II
-                    'r201a' => $request->r201a,
-                    'r201b' => $request->r201b,
-                    'r201c' => $request->r201c,
-                    'r201d' => $request->r201d,
-                    'r201e' => $request->r201e,
-                    'r201f' => $request->r201f,
-
-                    // Blok III
-                    'r301a' => $request->r301a,
-                    'r301b' => $request->r301b,
-                    'r301c' => $request->r301c,
-                    'r301d' => $request->r301d,
-                    'r302'  => $request->r302,
-                    'r303'  => $request->r303,
-
-                    'r304' => $request->r304 ? implode(',', $request->r304) : null,
-                    'r305' => $request->r305 ? implode(',', $request->r305) : null,
-                    'r306' => $request->r306 ? implode(',', $request->r306) : null,
-                    'r307' => $request->r307 ? implode(',', $request->r307) : null,
-                    'r308' => $request->r308 ? implode(',', $request->r308) : null,
-
-                    // Pekerja
-                    'r309a3' => $request->r309a3,
-                    'r309a4' => $request->r309a4,
-                    'r309b3' => $request->r309b3,
-                    'r309b4' => $request->r309b4,
-
-                    // Pendidikan (310)
-                    'r310a3' => $request->r310a3,
-                    'r310a4' => $request->r310a4,
-                    'r310b3' => $request->r310b3,
-                    'r310b4' => $request->r310b4,
-                    'r310c3' => $request->r310c3,
-                    'r310c4' => $request->r310c4,
-                    'r310d3' => $request->r310d3,
-                    'r310d4' => $request->r310d4,
-                    'r310e3' => $request->r310e3,
-                    'r310e4' => $request->r310e4,
-
-                    // Usia (311)
-                    'r311a3' => $request->r311a3,
-                    'r311a4' => $request->r311a4,
-                    'r311b3' => $request->r311b3,
-                    'r311b4' => $request->r311b4,
-                    'r311c3' => $request->r311c3,
-                    'r311c4' => $request->r311c4,
-                    'r311d3' => $request->r311d3,
-                    'r311d4' => $request->r311d4,
-
-                    // Modal (312)
-                    'r312a' => $request->r312a,
-                    'r312b' => $request->r312b,
-                ]
-            );
+            $this->saveEntryUmkm($request, $id); // tidak ada status
             return redirect()->back()->with('success', 'Data Berhasil di Simpan');
         }
     }
+    // Di dalam controller
+    private function saveEntryUmkm($request, $id, $status = null)
+    {
+        EntryUMKM::updateOrCreate(
+            ['id' => $id],
+            [
+                'r201a' => $request->r201a,
+                'r201b' => $request->r201b,
+                'r201c' => $request->r201c,
+                'r201d' => $request->r201d,
+                'r201e' => $request->r201e,
+                'r201f' => $request->r201f,
+
+                'r301a' => $request->r301a,
+                'r301b' => $request->r301b,
+                'r301c' => $request->r301c,
+                'r301d' => $request->r301d,
+                'r302'  => $request->r302,
+                'r303'  => $request->r303,
+
+                'r304' => $request->r304 ? implode(',', $request->r304) : null,
+                'r305' => $request->r305 ? implode(',', $request->r305) : null,
+                'r306' => $request->r306 ? implode(',', $request->r306) : null,
+                'r307' => $request->r307 ? implode(',', $request->r307) : null,
+                'r308' => $request->r308 ? implode(',', $request->r308) : null,
+
+                'r309a3' => $request->r309a3,
+                'r309a4' => $request->r309a4,
+                'r309b3' => $request->r309b3,
+                'r309b4' => $request->r309b4,
+
+                'r310a3' => $request->r310a3,
+                'r310a4' => $request->r310a4,
+                'r310b3' => $request->r310b3,
+                'r310b4' => $request->r310b4,
+                'r310c3' => $request->r310c3,
+                'r310c4' => $request->r310c4,
+                'r310d3' => $request->r310d3,
+                'r310d4' => $request->r310d4,
+                'r310e3' => $request->r310e3,
+                'r310e4' => $request->r310e4,
+
+                'r311a3' => $request->r311a3,
+                'r311a4' => $request->r311a4,
+                'r311b3' => $request->r311b3,
+                'r311b4' => $request->r311b4,
+                'r311c3' => $request->r311c3,
+                'r311c4' => $request->r311c4,
+                'r311d3' => $request->r311d3,
+                'r311d4' => $request->r311d4,
+
+                'r312a' => $request->r312a,
+                'r312b' => $request->r312b,
+
+                // Tambahkan status jika ada
+            ] + ($status !== null ? ['status' => $status] : [])
+        );
+    }
+
 
 
     /**

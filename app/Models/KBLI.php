@@ -8,6 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class KBLI extends Model
 {
     use HasFactory;
-    protected $table = 'KBLI';
+    protected $table = 'kbli';
     protected $guarded = [];
 }

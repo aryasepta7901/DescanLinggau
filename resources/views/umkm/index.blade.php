@@ -37,7 +37,7 @@
                                 <td>{{ $item->r301d ?? '-' }}</td>
                                 <td>
                                     @if ($item->status == 2)
-                                        <span class="badge badge-success">Valid</span>
+                                        <span class="badge badge-success">Clean</span>
                                     @else
                                         <span class="badge badge-secondary">Draft</span>
                                     @endif

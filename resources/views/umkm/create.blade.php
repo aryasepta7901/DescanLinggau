@@ -109,7 +109,11 @@
                                         @error('r201b')
                                             <div class="invalid-feedback">{{ $message }}</div>
                                         @enderror
+                                        <small class="form-text text-muted">
+                                            NB: Jika Tidak Ada NIK, Beri Strip (-)
+                                        </small>
                                     </div>
+
                                 </div>
                             </div>
 
@@ -400,8 +404,8 @@
                                                 <th colspan="2">Jenis Kelamin</th>
                                             </tr>
                                             <tr>
-                                                <th>Laki-laki</th>
-                                                <th>Perempuan</th>
+                                                <th style="min-width: 100px;">Laki-laki</th>
+                                                <th style="min-width: 100px;">Perempuan</th>
                                             </tr>
                                             <tr>
                                                 <th>(1)</th>
@@ -417,7 +421,7 @@
                                                 <td><input type="number"
                                                         class="form-control @error('r309a3') is-invalid @enderror"
                                                         id="dibayarLaki" name="r309a3"
-                                                        value="{{ old('r309a3', $umkm->r309a3 ?? '') }}"
+                                                        value="{{ old('r309a3', $umkm->r309a3 ?? '0') }}"
                                                         oninput="hitungJumlah()">
                                                     @error('r309a3')
                                                         <div class="invalid-feedback">{{ $message }}</div>
@@ -426,7 +430,7 @@
                                                 <td><input type="number"
                                                         class="form-control @error('r309a4') is-invalid @enderror"
                                                         id="dibayarPerempuan" name="r309a4"
-                                                        value="{{ old('r309a4', $umkm->r309a4 ?? '') }}"
+                                                        value="{{ old('r309a4', $umkm->r309a4 ?? '0') }}"
                                                         oninput="hitungJumlah()">
                                                     @error('r309a4')
                                                         <div class="invalid-feedback">{{ $message }}</div>
@@ -439,7 +443,7 @@
                                                 <td><input type="number"
                                                         class="form-control @error('r309b3') is-invalid @enderror"
                                                         id="tdkDibayarLaki" name="r309b3"
-                                                        value="{{ old('r309b3', $umkm->r309b3 ?? '') }}"
+                                                        value="{{ old('r309b3', $umkm->r309b3 ?? '0') }}"
                                                         oninput="hitungJumlah()">
                                                     @error('r309b3')
                                                         <div class="invalid-feedback">{{ $message }}</div>
@@ -448,7 +452,7 @@
                                                 <td><input type="number"
                                                         class="form-control @error('r309b4') is-invalid @enderror"
                                                         id="tdkDibayarPerempuan" name="r309b4"
-                                                        value="{{ old('r309b4', $umkm->r309b4 ?? '') }}"
+                                                        value="{{ old('r309b4', $umkm->r309b4 ?? '0') }}"
                                                         oninput="hitungJumlah()">
                                                     @error('r309b4')
                                                         <div class="invalid-feedback">{{ $message }}</div>
@@ -481,8 +485,9 @@
                                                 <th colspan="2">Jenis Kelamin</th>
                                             </tr>
                                             <tr>
-                                                <th>Laki-laki</th>
-                                                <th>Perempuan</th>
+                                                <th style="min-width: 100px;">Laki-laki</th>
+                                                <th style="min-width: 100px;">Perempuan</th>
+
                                             </tr>
                                             <tr>
                                                 <th>(1)</th>
@@ -500,7 +505,7 @@
                                                         <input type="number"
                                                             class="form-control @error('r310' . $key . '3') is-invalid @enderror"
                                                             name="r310{{ $key }}3"
-                                                            value="{{ old('r310' . $key . '3', $umkm->{'r310' . $key . '3'} ?? '') }}">
+                                                            value="{{ old('r310' . $key . '3', $umkm->{'r310' . $key . '3'} ?? '0') }}">
                                                         @error('r310' . $key . '3')
                                                             <div class="invalid-feedback">{{ $message }}</div>
                                                         @enderror
@@ -509,7 +514,7 @@
                                                         <input type="number"
                                                             class="form-control @error('r310' . $key . '4') is-invalid @enderror"
                                                             name="r310{{ $key }}4"
-                                                            value="{{ old('r310' . $key . '4', $umkm->{'r310' . $key . '4'} ?? '') }}">
+                                                            value="{{ old('r310' . $key . '4', $umkm->{'r310' . $key . '4'} ?? '0') }}">
                                                         @error('r310' . $key . '4')
                                                             <div class="invalid-feedback">{{ $message }}</div>
                                                         @enderror
@@ -534,8 +539,8 @@
                                                 <th colspan="2">Jenis Kelamin</th>
                                             </tr>
                                             <tr>
-                                                <th>Laki-laki</th>
-                                                <th>Perempuan</th>
+                                                <th style="min-width: 100px;">Laki-laki</th>
+                                                <th style="min-width: 100px;">Perempuan</th>
                                             </tr>
                                             <tr>
                                                 <th>(1)</th>
@@ -553,7 +558,7 @@
                                                         <input type="number"
                                                             class="form-control @error('r311' . $key . '3') is-invalid @enderror"
                                                             name="r311{{ $key }}3"
-                                                            value="{{ old('r311' . $key . '3', $umkm->{'r311' . $key . '3'} ?? '') }}">
+                                                            value="{{ old('r311' . $key . '3', $umkm->{'r311' . $key . '3'} ?? '0') }}">
                                                         @error('r311' . $key . '3')
                                                             <div class="invalid-feedback">{{ $message }}</div>
                                                         @enderror
@@ -562,7 +567,7 @@
                                                         <input type="number"
                                                             class="form-control @error('r311' . $key . '4') is-invalid @enderror"
                                                             name="r311{{ $key }}4"
-                                                            value="{{ old('r311' . $key . '4', $umkm->{'r311' . $key . '4'} ?? '') }}">
+                                                            value="{{ old('r311' . $key . '4', $umkm->{'r311' . $key . '4'} ?? '0') }}">
                                                         @error('r311' . $key . '4')
                                                             <div class="invalid-feedback">{{ $message }}</div>
                                                         @enderror
@@ -653,9 +658,12 @@
                                 </button>
                             </div>
                             <div>
-                                <button type="submit" name="action" value="save" class="btn btn-primary mr-2">
-                                    <i class="fas fa-save"></i> Simpan
-                                </button>
+
+                                @if ($umkm->status != 2)
+                                    <button type="submit" name="action" value="save" class="btn btn-primary mr-2">
+                                        <i class="fas fa-save"></i> Simpan
+                                    </button>
+                                @endif
                                 <button type="submit" name="action" value="validate" class="btn btn-success">
                                     <i class="fas fa-check"></i> Simpan + Validasi
                                 </button>

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\EntryUMKMController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,3 +33,4 @@ Route::post('login', [LoginController::class, 'authenticate'])->name('login');
 Route::get('logout', [LoginController::class, 'logout'])->name('logout');
 // Entry UMKM
 Route::resource('/EntryUMKM', EntryUMKMController::class)->middleware('auth');
+Route::resource('/users', UserController::class)->middleware('auth');

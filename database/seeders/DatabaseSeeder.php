@@ -7,6 +7,7 @@ use Illuminate\Database\Seeder;
 use App\Models\Kecamatan;
 use App\Models\kelurahan;
 use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 
 
@@ -74,11 +75,21 @@ class DatabaseSeeder extends Seeder
                     'id' => Str::uuid(),
                     'name' => 'arya',
                     'email' => 'aryasepta7901@gmail.com',
-                    'password' => '$2y$10$WUG9lH4DoK9Tkg..q.s6v.8R.8m7GPO65.H0by4CelzX05lAFWpve',
+                    'password' => Hash::make('Desacantik1674'),
                     'role' => 'cek',
                     'kel_id' => '1674021002',
                     'rt' => '01',
                 ],
+                [
+                    'id' => Str::uuid(),
+                    'name' => 'Aditya',
+                    'email' => 'adit1674@gmail.com',
+                    'password' => Hash::make('Desacantik1674'),
+                    'role' => 'cek',
+                    'kel_id' => '1674021002',
+                    'rt' => '01',
+                ],
+
             ]
         );
     }
